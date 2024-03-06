@@ -52,12 +52,22 @@ section {
 
 #intro-sub {
 
+    max-width: 1150px;
+    margin-left: 20px;
     margin-top: 2.5rem!important;
     font-size: 1rem!important;
     font-weight: 400!important;
     line-height: 1.4rem!important;
     color: #2a2a2a!important;
     letter-spacing: .05rem!important;
+}
+
+#intro-sub-notice {
+
+    font-size: .9rem;
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
 }
 
 #intro-pic {
@@ -1010,8 +1020,144 @@ label {
 }
 
 
-
 </style>
+
+<script>
+
+
+    function handleCountySelect () {
+        const selection = document.getElementById('county-select');
+        location = selection.value;  
+    }
+           
+    
+    function toggleAccordion(accordionId) {
+        const accordionContent = document.getElementById(accordionId);
+        accordionContent.classList.toggle('active');
+    
+        const allAccordions = document.querySelectorAll('.accordion-content');
+        allAccordions.forEach((accordion) => {
+            if (accordion.id !== accordionId) {
+                accordion.classList.remove('active');
+            }
+        });
+    }
+    
+</script>
+
+<script type="module" defer>
+
+
+    /*Below is where you would update the values for eligibility tables. You only need to update the value in the income column and not any of the functions below */
+    
+    const centralTable = [
+    
+        { 'householdSize': '1', 'income': '$36,900' },
+        { 'householdSize': '2', 'income': '$42,180' },
+        { 'householdSize': '3', 'income': '$47,460' },
+        { 'householdSize': '4', 'income': '$52,680' },
+        { 'householdSize': '5', 'income': '$56,940' },
+        { 'householdSize': '6', 'income': '$61,140' },
+        { 'householdSize': '7', 'income': '$65,340' },
+        { 'householdSize': '8', 'income': '$69,540' },
+    ];
+    
+    const sumterTable = [
+    
+        { 'householdSize': '1', 'income': '$33,480' },
+        { 'householdSize': '2', 'income': '$38,280' },
+        { 'householdSize': '3', 'income': '$43,080' },
+        { 'householdSize': '4', 'income': '$47,820' },
+        { 'householdSize': '5', 'income': '$51,660' },
+        { 'householdSize': '6', 'income': '$55,500' },
+        { 'householdSize': '7', 'income': '$59,340' },
+        { 'householdSize': '8', 'income': '$63,180' },
+    ];
+    
+    
+    //Table element generator:
+    
+     function generateTable(tableData) {
+    
+        const tbody = document.createElement('tbody');
+        tbody.classList.add('tbody');
+        
+        const tableRows = tableData.map(({ householdSize, income }) => {
+            const row = document.createElement('tr');
+             row.classList.add('tr');
+            
+            const cell1 = document.createElement('td');
+             cell1.classList.add('td-not-bootstrap'); 
+            cell1.innerHTML = householdSize;
+            row.appendChild(cell1);
+    
+            const cell2 = document.createElement('td');
+           cell2.classList.add('td-not-bootstrap');
+            cell2.innerHTML = income;
+            row.appendChild(cell2);
+    
+            return row;
+        });
+    
+        tableRows.forEach((tableRow) => {
+            tbody.appendChild(tableRow);
+        });
+    
+        return tbody;
+    }
+    
+    
+    //Table data selected based on the county specified. County name is CASE SENSITIVE and must include the word County:
+    
+    const counties = document.querySelectorAll('.countyName');
+    
+    counties.forEach((item) => {
+        const tableContainer = item.parentElement.querySelector('.tbody-container');
+    
+    
+        if (tableContainer) {
+            switch (item.innerHTML) {
+                case 'Lake County':
+                case 'Orange County':
+                case 'Osceola County':
+                case 'Seminole County':
+                    const generatedTableCentral = generateTable(centralTable);
+                    tableContainer.appendChild(generatedTableCentral);
+                    break;
+    
+                case 'Sumter County':     
+                    const generatedTableSumter = generateTable(sumterTable);
+                    tableContainer.appendChild(generatedTableSumter);
+                    break;
+    
+                default:
+                    console.log('no table match found');
+                    break;
+            }
+        } else {
+            console.log('no .tbody-container found for', item.innerHTML);
+        }
+    });
+    
+    </script>
+    
+    <script type="module">
+        
+    /*UPDATES THE DATE ON ALL CARDS BY UPDATING THE VALUE OF CONST DATE = "" BELOW. BE SURE TO LEAVE QUOTATION MARKS  */
+    
+    const date = "2/16/24";
+    
+    /*NO NEED TO ALTER THE BELOW FUNCTION*/
+    const updatedDates = document.querySelectorAll('.date-updated');
+    
+    updatedDates.forEach((item, index) => 
+        item.innerHTML = `Updated:${date}. See website for pricing details.`);
+        
+    
+    </script>
+
+
+
 </head>
 <body>
     
@@ -1019,10 +1165,13 @@ label {
         <div id="intro-title">
             <div id="intro-pic"></div>
             
-            <div><h1 id="intro-h1">Hot Deals Central Florida</h1>
-            <p id="intro-sub"><strong>ConcordRENTS</strong> is a national leader in providing high-quality, affordable, multifamily housing and understands the importance of a strong community and the value of giving back. With the affordable housing crisis in Orlando, FL and the rest of Central Florida, we understand the struggle in finding quality affordable housing.<br />
-            <br />Below is a list of our <strong>current</strong> Available Affordable Housing Inventory around Central Florida. <strong>As part of the application process, applicants must submit the verification documentation in a timely manner, as the first approved and full deposit paid applicant will have priority of the available apartment home.</strong><br />
-            <br />This housing inventory will move quickly. <strong>Apply today</strong> and turn this opportunity into a <strong>home!</strong></p>
+            <div><!--<h1 id="intro-h1">Hot Deals Central Florida</h1>-->
+            <p id="intro-sub"><strong>ConcordRENTS</strong> is a national leader in providing high-quality, multifamily housing and understands the importance of a strong community and the value of giving back.<br />
+            <br>Below are links to our <strong>current</strong> Other Availability Housing Inventory around Florida.
+            <strong>As part of the application process, applicants must submit the verification documentation in a timely manner,
+                as the first approved and full deposit paid applicant will have priority of the available apartment home.</strong><br />
+            <br>This housing inventory will move quickly. <strong>Apply today</strong> and turn this opportunity into a <strong>home!</strong></p>
+            <p id="intro-sub-notice">Pricing based on eligibility. Restrictions apply. Please visit community websites for more details on pricing and specials.</p>
         </div>
         <div id="nav-section-background">
         <h2 id="page-nav-h2">Choose Your Region:</h2>
@@ -1041,12 +1190,20 @@ label {
 </div>
 
 <main>
-<div class="bed-count-dropdown-container"><label for="bed-count-dropdown">How many Bedrooms?</label> <select id="bed-select" onchange="handleBedCountSelect()"><option value="#one-bed-section">1 Bedrooms</option><option value="#two-bed-section">2 Bedrooms</option><option value="#three-bed-section">3 Bedrooms</option><option value="#four-bed-section">4 Bedrooms</option> </select></div>
+<div class="county-dropdown-container"><label for="county-dropdown">Select Your County:</label> <select id="county-select" onchange="handleCountySelect()">
+    <option value="#Orange">Orange</option>
+    <option value="#Osceola">Osceola</option>
+    <option value="#Seminole">Seminole</option>
+    <option value="#Lake">Lake</option>
+    <option value="#Sumter">Sumter</option> 
+</select>
+</div>
 
 <section class="featured-community">
 <h1 id="featured-community-h1">Featured Community</h1>
 
-<div class="main-container"><!--card starts here-->
+<div class="main-container">
+<!--card starts here-->
 <div class="card-container">
 <div class="card">
 <div class="image-container-wrapper"><a href="https://www.lakesumterapartments.com/" target="_blank">
@@ -1107,11 +1264,78 @@ label {
 </div>
 </section>
 
-<section class="bedroom-section" id="one-bed-section">
-<h1 class="bedcount-title">1 Bedroom Apartment Homes</h1>
+<section class="county-section" id="Orange">
+<h1 class="bedcount-title">ORANGE COUNTY</h1>
 <br>
 <p class="bedcount-title-p">None Available At This Time</p>
 <br>
 </section>
+<section class="county-section" id="Osceola">
+    <h1 class="bedcount-title">OSCEOLA COUNTY</h1>
+<br>
+    <div class="main-container">
+        <!--card starts here-->
+        <div class="card-container">
+        <div class="card">
+        <div class="image-container-wrapper"><a href="https://www.lakesumterapartments.com/" target="_blank">
+        <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/lake%20sumter_012624.jpg');">&nbsp;</div>
+        </a></div>
+        
+        <h2 class="property-name"><a href="https://www.lakesumterapartments.com/" target="_blank">Lake Sumter Apartments</a></h2>
+        
+        <div class="countyName">Sumter County</div>
+        
+        <div class="card-body">
+            <img class="map-pin-icon" alt="map-pin-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/location-dot-solid.png">
+                
+                <h4 class="address"><a href="https://maps.app.goo.gl/Q6UkghWb2DwFuEpt5" target="_blank">10816 NE 87th Loop<br />
+            Lady Lake, FL 32162</h4>
+            </a>
+        </div>
+        
+            <div class="unit-details">
+                <div><img class="bed-icon" alt="bed-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/bed-solid.png">3 Beds</div>
+        
+                <div><img class="bathroom-icon" alt="bathroom-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/bath-solid.png">2 Baths</div>
+        
+                <div>Rent:<img class="dollar-sign-icon" alt="dollar-sign-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/dollar-sign-solid.png" >1,085</div>
+            </div>
+        
+        <div class="admin-details">
+        <p>Deposit Starting at: $1,200</p>
+        
+        <p>Application Fee: $90</p>
+        </div>
+        
+        <div class="accordion-container"><button class="accordion-button" onclick="toggleAccordion('modal1')">View Income Restrictions</button>
+        
+        <div class="accordion-content" id="modal1"><span class="close-btn-x" onclick="toggleAccordion('modal1')">x</span>
+        
+        <h2 class="eligibility-title">Income Eligibility Requirements</h2>
+        
+        <table class="table">
+            <thead class="thead">
+                <tr class="tr">
+                    <th class="th" scope="col">Household Size</th>
+                    <th class="th" scope="col">Max Allowable Household Income for 60%</th>
+                </tr>
+            </thead>
+        </table>
+        
+        <table class="tbody-container table">
+        </table>
+        </div>
+        </div>
+        <button class="CTA-apply"><a href="https://www.lakesumterapartments.com/letsgetstarted" target="_blank">Get Started</a></button>
+        
+        <p class="date-updated"></p>
+        </div>
+        </div>
+        </div>
+        </div>
+
+    </div>
+</section>
+
 </body>
 </html>
