@@ -308,7 +308,7 @@ background-color: #8e5a33!important;
 }
 
 
-.bed-count-dropdown-container {
+.county-dropdown-container {
     
 display: flex!important;
 flex-direction: row!important;
@@ -324,7 +324,7 @@ margin-left: 60px!important;
 }
 
 
-.bed-count-dropdown-container label {
+.county-dropdown-container label {
 
 font-size: 1.3rem!important;
 font-size: 1.4rem!important;
@@ -332,7 +332,7 @@ font-weight: 200!important;
 letter-spacing: .03rem!important;
 }
 
-.bed-count-dropdown {
+.county-dropdown {
 
 font-family: 'Poppins', sans-serif!important;
 padding: .5rem!important;
@@ -340,7 +340,7 @@ background-color: rgb(156, 156, 156)!important;
 
 }
 
-.bed-count-dropdown option {
+.county-dropdown option {
 
 font-family: 'Poppins', sans-serif!important;
 font-weight: .02rem!important;
@@ -358,7 +358,10 @@ margin-bottom: 0;
 
 #featured-community-h1 {
 
-color: #883720!important;
+color: #ffffff!important;
+background-color: #883720;
+padding:4px;
+padding-left: 15px;
 font-family: 'Poppins', sans-serif!important;
 font-size: 1.5rem!important;
 font-weight: 600!important;
@@ -372,15 +375,17 @@ margin-right: 65px!important;
 
 #featured-community-h1 {
     font-size: 1rem!important;
-    padding: 0!important;
     margin-left: 28px!important;
 }
 }
 
-.bedcount-title {
+.county-title {
 
 
-color: #883720!important;
+color: #ffffff!important;
+background-color: #883720;
+padding:4px;
+padding-left: 15px;
 font-family: 'Poppins', sans-serif!important;
 font-size: 1.5rem!important;
 font-weight: 600!important;
@@ -391,7 +396,7 @@ margin-right: 65px!important;
 
 @media screen and (max-width: 480px) and (min-width: 200px) {
 
-.bedcount-title {
+.county-title {
     font-size: .95rem!important;
     padding: 0!important;
     margin-left: 28px!important;
@@ -399,7 +404,7 @@ margin-right: 65px!important;
 }
 
 
-.bedcount-title-p {
+.county-title-p {
 
 color: #000000!important;
 font-family: 'Open Sans', sans-serif!important;
@@ -410,8 +415,8 @@ margin-left: 65px!important;
 }
 .main-container {
 
-display: flex!important;
-flex-direction: row;
+display: flex;
+flex-direction: column;
 max-width: 1140px!important;
 margin: auto!important;
 padding: 20px!important; 
@@ -447,7 +452,8 @@ text-align: center!important;
 
 .card-container {
 
-max-width: 1100px;
+max-width: 1060px;
+
   
     
 }
@@ -466,9 +472,16 @@ overflow: hidden!important;
     
 background-size: cover!important;
 background-position: center!important;
-width: 100%!important;
-height: 250px!important;
-border-radius: 10px!important;       
+width: 400px!important;
+height: 400px!important;
+border-radius: 10px!important;
+margin:10px;    
+
+}
+
+.image-container-wrapper {
+
+    max-width: 400px;
 }
 
 
@@ -478,16 +491,20 @@ cursor: pointer;
 
 }
 
+.card-title {
+
+   text-align: center;
+
+
+}
+
 .property-name {
 
 color: #000000!important;
 font-family: 'Open Sans', sans-serif!important;
-text-transform: none!important;
-font-size: 1.2rem!important;
+text-transform: uppercase;
+font-size: 1.5rem!important;
 font-weight: 700;
-text-align: start!important;
-margin-left: 10px!important;
-line-height: 33px;
 
 }
 
@@ -496,13 +513,57 @@ line-height: 33px;
 text-decoration: none;
 color: unset;
 }
+
+.special-pricing {
+
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-style: italic;
+    color: red;
+    font-weight: 600;
+
+}
+
+.pricing-grid {
+
+    display: grid;
+    max-width: 425px;
+    grid-template-columns: repeat(2, auto);
+    grid-auto-flow: row; 
+    place-content: center;
+    justify-content: space-evenly;
+    gap: 1.2rem;
+
+
+}
+
+.price-item {
+
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-style: italic;
+    display: inline;
+    text-align: center;
+    
+
+
+}
+.price-item p {
+
+    display: inline;
+}
   
 .card {
 
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
 border-radius: 10px!important;
 box-shadow:  1px 5px 5px 1px #b3b2b2!important;
 background-color: #ffffff!important;
 padding: .7rem!important;
+max-height: 460px;
 
         
 }
@@ -514,12 +575,14 @@ background-color: #eeeeee!important;
 
 }
   
-.card-body before:last-child {
+.card-body {
    
-gap: 15px!important;
-justify-content: space-around!important;
+display: flex;
+flex-direction: column;
+place-items: center;
 text-align: center!important;
 color: #000000!important;
+
 }
 
 
@@ -1200,7 +1263,7 @@ label {
 </div>
 
 <section class="featured-community">
-<h1 id="featured-community-h1">Featured Community</h1>
+<h1 id="featured-community-h1">Featured Communities</h1>
 
 <div class="main-container">
 <!--card starts here-->
@@ -1209,55 +1272,48 @@ label {
 <div class="image-container-wrapper"><a href="https://www.lakesumterapartments.com/" target="_blank">
 <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/lake%20sumter_012624.jpg');">&nbsp;</div>
 </a></div>
-
-<h2 class="property-name"><a href="https://www.lakesumterapartments.com/" target="_blank">Lake Sumter Apartments</a></h2>
-
-<div class="countyName">Sumter County</div>
-
+<div>ICON ANDPHONE NUMBER</div>
 <div class="card-body">
-    <img class="map-pin-icon" alt="map-pin-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/location-dot-solid.png">
-        
-        <h4 class="address"><a href="https://maps.app.goo.gl/Q6UkghWb2DwFuEpt5" target="_blank">10816 NE 87th Loop<br />
-    Lady Lake, FL 32162</h4>
-    </a>
-</div>
+    <div class="card-title">
+        <h2 class="property-name"><a href="https://www.lakesumterapartments.com/" target="_blank">Lake Sumter Apartments</a></h2>
+        <div class="address">*PIN* 123 Mayberry St, Orlando, FL 32801</div>
+    </div>
+    <h3 class="special-pricing">Special Limited Time Pricing!</h3>
+    <div class="pricing-grid">
+        <div class="price-item">1 Bedroom at $price</div>
+        <div class="price-item">2 Bedroom at $price</div>
+        <div class="price-item">3 Bedroom at $price</div>
+        <div class="price-item">4 Bedroom at $price</div>
 
-    <div class="unit-details">
-        <div><img class="bed-icon" alt="bed-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/bed-solid.png">3 Beds</div>
 
-        <div><img class="bathroom-icon" alt="bathroom-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/bath-solid.png">2 Baths</div>
-
-        <div>Rent:<img class="dollar-sign-icon" alt="dollar-sign-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/dollar-sign-solid.png" >1,085</div>
     </div>
 
-<div class="admin-details">
-<p>Deposit Starting at: $1,200</p>
-
-<p>Application Fee: $90</p>
 </div>
 
 <div class="accordion-container"><button class="accordion-button" onclick="toggleAccordion('modal1')">View Income Restrictions</button>
 
-<div class="accordion-content" id="modal1"><span class="close-btn-x" onclick="toggleAccordion('modal1')">x</span>
+    <div class="accordion-content" id="modal1"><span class="close-btn-x" onclick="toggleAccordion('modal1')">x</span>
+    
+    <h2 class="eligibility-title">Income Eligibility Requirements</h2>
+    
+    <table class="table">
+        <thead class="thead">
+            <tr class="tr">
+                <th class="th" scope="col">Household Size</th>
+                <th class="th" scope="col">Max Allowable Household Income for 60%</th>
+            </tr>
+        </thead>
+    </table>
+    
+    <table class="tbody-container table">
+    </table>
+    </div>
+    </div>
+    <button class="CTA-apply"><a href="https://www.lakesumterapartments.com/letsgetstarted" target="_blank">Get Started</a></button>
+    
+    <p class="date-updated"></p>
 
-<h2 class="eligibility-title">Income Eligibility Requirements</h2>
 
-<table class="table">
-	<thead class="thead">
-		<tr class="tr">
-			<th class="th" scope="col">Household Size</th>
-			<th class="th" scope="col">Max Allowable Household Income for 60%</th>
-		</tr>
-	</thead>
-</table>
-
-<table class="tbody-container table">
-</table>
-</div>
-</div>
-<button class="CTA-apply"><a href="https://www.lakesumterapartments.com/letsgetstarted" target="_blank">Get Started</a></button>
-
-<p class="date-updated"></p>
 </div>
 </div>
 </div>
@@ -1265,13 +1321,13 @@ label {
 </section>
 
 <section class="county-section" id="Orange">
-<h1 class="bedcount-title">ORANGE COUNTY</h1>
+<h1 class="county-title">ORANGE COUNTY</h1>
 <br>
-<p class="bedcount-title-p">None Available At This Time</p>
+<p class="county-title-p">None Available At This Time</p>
 <br>
 </section>
 <section class="county-section" id="Osceola">
-    <h1 class="bedcount-title">OSCEOLA COUNTY</h1>
+    <h1 class="county-title">OSCEOLA COUNTY</h1>
 <br>
     <div class="main-container">
         <!--card starts here-->
