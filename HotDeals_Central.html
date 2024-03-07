@@ -1093,12 +1093,6 @@ label {
 <script>
 
 
-    function handleCountySelect () {
-        const selection = document.getElementById('county-select');
-        location = selection.value;  
-    }
-           
-    
     function toggleAccordion(accordionId) {
         const accordionContent = document.getElementById(accordionId);
         accordionContent.classList.toggle('active');
@@ -1110,15 +1104,19 @@ label {
             }
         });
     }
+
+    function handleCountySelect () {
+        const selection = document.getElementById('county-select');
+        location = selection.value;  
+    }    
     
 </script>
 
 <script type="module" defer>
 
-
-    /*Below is where you would update the values for eligibility tables. You only need to update the value in the income column and not any of the functions below */
+/*Below is where you would update the values for eligibility tables. You only need to update the value in the income column and not any of the functions below */
     
-    const centralTable = [
+    const centralTable60 = [
     
         { 'householdSize': '1', 'income': '$36,900' },
         { 'householdSize': '2', 'income': '$42,180' },
@@ -1130,7 +1128,7 @@ label {
         { 'householdSize': '8', 'income': '$69,540' },
     ];
     
-    const sumterTable = [
+    const sumterTable60 = [
     
         { 'householdSize': '1', 'income': '$33,480' },
         { 'householdSize': '2', 'income': '$38,280' },
@@ -1142,6 +1140,31 @@ label {
         { 'householdSize': '8', 'income': '$63,180' },
     ];
     
+    const centralTable80 = [
+
+        { 'householdSize': '1', 'income': '$' },
+        { 'householdSize': '2', 'income': '$' },
+        { 'householdSize': '3', 'income': '$' },
+        { 'householdSize': '4', 'income': '$' },
+        { 'householdSize': '5', 'income': '$' },
+        { 'householdSize': '6', 'income': '$' },
+        { 'householdSize': '7', 'income': '$' },
+        { 'householdSize': '8', 'income': '$' },
+     
+    ];
+
+    const sumterTable80 = [
+
+        { 'householdSize': '1', 'income': '$' },
+        { 'householdSize': '2', 'income': '$' },
+        { 'householdSize': '3', 'income': '$' },
+        { 'householdSize': '4', 'income': '$' },
+        { 'householdSize': '5', 'income': '$' },
+        { 'householdSize': '6', 'income': '$' },
+        { 'householdSize': '7', 'income': '$' },
+        { 'householdSize': '8', 'income': '$' },
+
+    ];
     
     //Table element generator:
     
@@ -1176,36 +1199,83 @@ label {
     
     
     //Table data selected based on the county specified. County name is CASE SENSITIVE and must include the word County:
-    
-    const counties = document.querySelectorAll('.countyName');
-    
-    counties.forEach((item) => {
-        const tableContainer = item.parentElement.querySelector('.tbody-container');
-    
-    
-        if (tableContainer) {
-            switch (item.innerHTML) {
-                case 'Lake County':
-                case 'Orange County':
-                case 'Osceola County':
-                case 'Seminole County':
-                    const generatedTableCentral = generateTable(centralTable);
-                    tableContainer.appendChild(generatedTableCentral);
-                    break;
-    
-                case 'Sumter County':     
-                    const generatedTableSumter = generateTable(sumterTable);
-                    tableContainer.appendChild(generatedTableSumter);
-                    break;
-    
-                default:
-                    console.log('no table match found');
-                    break;
-            }
+    //need additional table cases that include county and whether affordable has been specified.
+
+   
+/*const incomeLimit = document.querySelectorAll('.eligibility-title');
+
+
+console.log(incomeLimit);
+
+    let incomePercentage;
+
+    incomeLimit.forEach((item) => {
+        console.log(item.innerHTML);
+        if (item.innerHTML) {
+            incomePercentage = '60';
         } else {
-            console.log('no .tbody-container found for', item.innerHTML);
-        }
-    });
+            incomePercentage = '80';
+        } 
+        console.log(incomePercentage);
+        
+    });  */
+
+    
+ /*   const incomeTableCentral = `centralTable${incomePercentage}`;
+   
+   console.log(incomeTableCentral);
+
+   const incomeTableSumter = `sumterTable${incomePercentage}`; */
+
+   let income;
+   
+   const counties = document.querySelectorAll('.county-title').forEach((county) => {
+        const countyName = county.innerHTML;
+            const tableContainer = document.querySelectorAll('.tbody-container');
+        
+                const incomeDiv = document.querySelectorAll('.eligibility-title');
+                incomeDiv.forEach((item) => {
+                    
+                    if(item.innerHTML === "") {
+                        income = 80;
+                    } else {
+                        income = 60;
+                    }
+                    
+                    console.log(income);
+                }); 
+
+        if(!tableContainer) {
+            console.log('there is no table container on this card');
+            } else {
+                console.log('table div is found');
+            } 
+ 
+       
+        
+            switch (countyName) {
+            case 'Lake County':
+            case 'Orange County':
+            case 'Osceola County':
+            case 'Seminole County':
+                console.log()
+                /* generatedTableCentral = generateTable(centralTable60);
+                console.log('county was orange or osecola');
+                tableContainer.appendChild(generatedTableCentral); */
+                
+                break;
+
+            case 'Sumter County':     
+                /* const generatedTableSumter = generateTable(sumterTable60);
+                console.log('sumterTable80 was true')
+                tableContainer.appendChild(generatedTableSumter); */
+                break;
+            }
+        } 
+    
+);
+
+
     
     </script>
     
@@ -1268,7 +1338,7 @@ label {
 </div>
 
 <section class="featured-community">
-<h1 id="featured-community-h1">Featured Communities</h1>
+<h1 id="featured-community-h1" class="county-title">Featured Communities</h1>
 
 <div class="main-container">
 <!--card starts here-->
@@ -1299,7 +1369,7 @@ label {
 
     <div class="accordion-content" id="modal1"><span class="close-btn-x" onclick="toggleAccordion('modal1')">x</span>
     
-    <h2 class="eligibility-title">Income Eligibility Requirements</h2>
+    <h2 class="eligibility-title"></h2>
     
     <table class="table">
         <thead class="thead">
@@ -1326,13 +1396,74 @@ label {
 </section>
 
 <section class="county-section" id="Orange">
-<h1 class="county-title">ORANGE COUNTY</h1>
+<h1 class="county-title">Orange County</h1>
 <br>
-<p class="county-title-p">None Available At This Time</p>
+<div class="main-container">
+    <!--card starts here-->
+    <div class="card-container">
+    <div class="card">
+    <div class="image-container-wrapper"><a href="https://www.lakesumterapartments.com/" target="_blank">
+    <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/lake%20sumter_012624.jpg');">&nbsp;</div>
+    </a></div>
+    
+    <h2 class="property-name"><a href="https://www.lakesumterapartments.com/" target="_blank">Lake Sumter Apartments</a></h2>
+    
+    
+    <div class="card-body">
+        <img class="map-pin-icon" alt="map-pin-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/location-dot-solid.png">
+            
+            <h4 class="address"><a href="https://maps.app.goo.gl/Q6UkghWb2DwFuEpt5" target="_blank">10816 NE 87th Loop<br />
+        Lady Lake, FL 32162</h4>
+        </a>
+        <h4>Sumter County</h4>
+    </div>
+    
+        <div class="unit-details">
+            <div><img class="bed-icon" alt="bed-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/bed-solid.png">3 Beds</div>
+    
+            <div><img class="bathroom-icon" alt="bathroom-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/bath-solid.png">2 Baths</div>
+    
+            <div>Rent:<img class="dollar-sign-icon" alt="dollar-sign-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/dollar-sign-solid.png" >1,085</div>
+        </div>
+    
+    <div class="admin-details">
+    <p>Deposit Starting at: $1,200</p>
+    
+    <p>Application Fee: $90</p>
+    </div>
+    
+    <div class="accordion-container"><button class="accordion-button" onclick="toggleAccordion('modal1')">View Income Restrictions</button>
+    
+    <div class="accordion-content" id="modal1"><span class="close-btn-x" onclick="toggleAccordion('modal1')">x</span>
+    
+    <h2 class="eligibility-title">Income Eligibility Requirements</h2>
+    
+    <table class="table">
+        <thead class="thead">
+            <tr class="tr">
+                <th class="th" scope="col">Household Size</th>
+                <th class="th" scope="col">Max Allowable Household Income for 60%</th>
+            </tr>
+        </thead>
+    </table>
+    
+    <table class="tbody-container table">
+    </table>
+    </div>
+    </div>
+    <button class="CTA-apply"><a href="https://www.lakesumterapartments.com/letsgetstarted" target="_blank">Get Started</a></button>
+    
+    <p class="date-updated"></p>
+    </div>
+    </div>
+    </div>
+    </div>
+
+</div>
 <br>
 </section>
 <section class="county-section" id="Osceola">
-    <h1 class="county-title">OSCEOLA COUNTY</h1>
+    <h1 class="county-title">Osceola County</h1>
 <br>
     <div class="main-container">
         <!--card starts here-->
@@ -1344,7 +1475,6 @@ label {
         
         <h2 class="property-name"><a href="https://www.lakesumterapartments.com/" target="_blank">Lake Sumter Apartments</a></h2>
         
-        <div class="countyName">Sumter County</div>
         
         <div class="card-body">
             <img class="map-pin-icon" alt="map-pin-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/location-dot-solid.png">
