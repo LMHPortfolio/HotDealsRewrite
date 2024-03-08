@@ -1119,20 +1119,32 @@ label {
 
    
     
-const centralTable = [
-
-    { 'householdSize': '1', 'income': '$36,900' },
-    { 'householdSize': '2', 'income': '$42,180' },
-    { 'householdSize': '3', 'income': '$41,820' },
-    { 'householdSize': '4', 'income': '$47,460' },
-    { 'householdSize': '5', 'income': '$52,680' },
-    { 'householdSize': '6', 'income': '$56,940' },
-    { 'householdSize': '7', 'income': '$65,340' },
-    { 'householdSize': '8', 'income': '$69,540' },
+const centralTable = [ 
+    
+    [
+        { 'householdSize': '1', 'income': '$36,900' },
+        { 'householdSize': '2', 'income': '$42,180' },
+        { 'householdSize': '3', 'income': '$41,820' },
+        { 'householdSize': '4', 'income': '$47,460' },
+        { 'householdSize': '5', 'income': '$52,680' },
+        { 'householdSize': '6', 'income': '$56,940' },
+        { 'householdSize': '7', 'income': '$65,340' },
+        { 'householdSize': '8', 'income': '$69,540' },
+    ],
+    [
+        { 'householdSize': '1', 'income': '$central,80' },
+        { 'householdSize': '2', 'income': '$42,180' },
+        { 'householdSize': '3', 'income': '$41,820' },
+        { 'householdSize': '4', 'income': '$47,460' },
+        { 'householdSize': '5', 'income': '$52,680' },
+        { 'householdSize': '6', 'income': '$56,940' },
+        { 'householdSize': '7', 'income': '$65,340' },
+        { 'householdSize': '8', 'income': '$69,540' },
+    ]
 ];
 
 const sumterTable = [
-
+    [
     { 'householdSize': '1', 'income': '$33,480' },
     { 'householdSize': '2', 'income': '$38,280' },
     { 'householdSize': '3', 'income': '$43,080' },
@@ -1140,58 +1152,28 @@ const sumterTable = [
     { 'householdSize': '5', 'income': '$51,660' },
     { 'householdSize': '6', 'income': '$55,500' },
     { 'householdSize': '7', 'income': '$59,340' },
-    { 'householdSize': '8', 'income': '$63,130' },
+    { 'householdSize': '8', 'income': '$63,130' }, 
+    ],
+
+    [
+
+        { 'householdSize': '1', 'income': '$sumter,80' },
+        { 'householdSize': '2', 'income': '$38,280' },
+        { 'householdSize': '3', 'income': '$43,080' },
+        { 'householdSize': '4', 'income': '$47,820' },
+        { 'householdSize': '5', 'income': '$51,660' },
+        { 'householdSize': '6', 'income': '$55,500' },
+        { 'householdSize': '7', 'income': '$59,340' },
+        { 'householdSize': '8', 'income': '$63,130' },
+
+
+    ]
 ];
     
    
-const centralTable80 = [
 
-    { 'householdSize': '1', 'income': '$36,900' },
-    { 'householdSize': '2', 'income': '$42,180' },
-    { 'householdSize': '3', 'income': '$41,820' },
-    { 'householdSize': '4', 'income': '$47,460' },
-    { 'householdSize': '5', 'income': '$52,680' },
-    { 'householdSize': '6', 'income': '$56,940' },
-    { 'householdSize': '7', 'income': '$65,340' },
-    { 'householdSize': '8', 'income': '$69,540' },
-];
 
-const sumterTable80 = [
 
-    { 'householdSize': '1', 'income': '$33,480' },
-    { 'householdSize': '2', 'income': '$38,280' },
-    { 'householdSize': '3', 'income': '$43,080' },
-    { 'householdSize': '4', 'income': '$47,820' },
-    { 'householdSize': '5', 'income': '$51,660' },
-    { 'householdSize': '6', 'income': '$55,500' },
-    { 'householdSize': '7', 'income': '$59,340' },
-    { 'householdSize': '8', 'income': '$63,130' },
-];
-
-const centralTable60 = [
-
-    { 'householdSize': '1', 'income': '$36,900' },
-    { 'householdSize': '2', 'income': '$42,180' },
-    { 'householdSize': '3', 'income': '$41,820' },
-    { 'householdSize': '4', 'income': '$47,460' },
-    { 'householdSize': '5', 'income': '$52,680' },
-    { 'householdSize': '6', 'income': '$56,940' },
-    { 'householdSize': '7', 'income': '$65,340' },
-    { 'householdSize': '8', 'income': '$69,540' },
-];
-
-const sumterTable60 = [
-
-    { 'householdSize': '1', 'income': '$33,480' },
-    { 'householdSize': '2', 'income': '$38,280' },
-    { 'householdSize': '3', 'income': '$43,080' },
-    { 'householdSize': '4', 'income': '$47,820' },
-    { 'householdSize': '5', 'income': '$51,660' },
-    { 'householdSize': '6', 'income': '$55,500' },
-    { 'householdSize': '7', 'income': '$59,340' },
-    { 'householdSize': '8', 'income': '$63,130' },
-];
-    
    
     //Table element generator:
     
@@ -1229,111 +1211,67 @@ return tbody;
     //need additional table cases that include county and whether affordable has been specified.
 
    
-/*const incomeLimit = document.querySelectorAll('.eligibility-title');
-
-
-console.log(incomeLimit);
-
-    let incomePercentage;
-
-    incomeLimit.forEach((item) => {
-        console.log(item.innerHTML);
-        if (item.innerHTML) {
-            incomePercentage = '60';
-        } else {
-            incomePercentage = '80';
-        } 
-        console.log(incomePercentage);
-        
-    });  */
-
-    
- /*   const incomeTableCentral = `centralTable${incomePercentage}`;
-   
-   console.log(incomeTableCentral);
-
-   const incomeTableSumter = `sumterTable${incomePercentage}`; */
-
-   /* let income;
-   
-   const counties = document.querySelectorAll('.county-title').forEach((county) => {
-        const countyName = county.innerHTML;
-            const tableContainer = document.querySelectorAll('.tbody-container');
-        
-                const incomeDiv = document.querySelectorAll('.eligibility-title');
-                incomeDiv.forEach((item) => {
-                    
-                    if(item.innerHTML === "") {
-                        income = 80;
-                    } else {
-                        income = 60;
-                    }
-                    
-                    console.log(income);
-                }); 
-
-        if(!tableContainer) {
-            console.log('there is no table container on this card');
-            } else {
-                console.log('table div is found');
-            } 
- 
-       
-        
-            switch (countyName) {
-            case 'Lake County':
-            case 'Orange County':
-            case 'Osceola County':
-            case 'Seminole County':
-                console.log()
-                 generatedTableCentral = generateTable(centralTable60);
-                console.log('county was orange or osecola');
-                tableContainer.appendChild(generatedTableCentral); 
-                
-                break;
-
-            case 'Sumter County':     
-                const generatedTableSumter = generateTable(sumterTable60);
-                console.log('sumterTable80 was true')
-                tableContainer.appendChild(generatedTableSumter); 
-                break;
-            }
-        } 
-    
-); */
-
-//ORIGINAL IMPLEMENTATION:
 
 const counties = document.querySelectorAll('.countyName');
+const incomeLimit = document.querySelectorAll('.eligibility-title');
 
-counties.forEach((item) => {
-    const tableContainer = item.parentElement.querySelector('.tbody-container');
+let incomeTableCentral;
+let incomeTableSumter;
 
 
-    if (tableContainer) {
-        switch (item.innerHTML) {
+counties.forEach((county) => {
+    const tableContainer = county.parentElement.querySelector('.tbody-container');
+    
+        incomeLimit.forEach((item) => {
 
-            case 'Lake County':
-            case 'Orange County':
-            case 'Osceola County':
-            case 'Seminole County':
-                const generatedTableCentral = generateTable(centralTable);
-                tableContainer.appendChild(generatedTableCentral);
-                break;
 
-            case 'Sumter County':     
-                const generatedTableSumter = generateTable(sumterTable);
-                tableContainer.appendChild(generatedTableSumter);
-                break;
+     //I AM ALWAYS HITTING THE ELSE STATEMENT HERE REGARDLESS OF IF INNER HTML EXISTS:       
+            
+            if(item.innerHTML === 'View Income Restrictions') {
+                incomeTableCentral = centralTable[0];
+                incomeTableSumter = sumterTable[0];
+            } else {
+            incomeTableCentral = centralTable[1];
+            incomeTableSumter = sumterTable[1];
+        }  
 
-            default:
-                console.log('no table match found');
-                break;
-        }
-    } else {
-        console.log('no .tbody-container found for', item.innerHTML);
-    }
+        })
+    
+  
+    
+    if(tableContainer) {
+                switch (county.innerHTML) {
+
+                    case 'Lake County':
+                    case 'Orange County':
+                    case 'Osceola County':
+                    case 'Seminole County':
+                        const generatedTableCentral = generateTable(incomeTableCentral);
+                        tableContainer.appendChild(generatedTableCentral);
+                        break;
+
+                    case 'Sumter County':
+                        const generatedTableSumter = generateTable(incomeTableSumter);
+                        tableContainer.appendChild(generatedTableSumter);
+                        break;
+
+                    default:
+                        console.log('no table match found');
+                        break;
+                }
+            } else {
+                 console.log('no .tbody-container found for', county.innerHTML);
+            }
+         
+           
 });
+
+
+
+
+    
+
+
 
 
     
@@ -1427,12 +1365,12 @@ counties.forEach((item) => {
                         </div>
                 
             </div>
- 
-<div class="accordion-container"><button class="accordion-button" onclick="toggleAccordion('modal2')">View Income Restrictions</button>
+<h2 class="eligibility-title">View Income Restrictions</h2>
+<div class="accordion-container"><button class="accordion-button" onclick="toggleAccordion('modal1')">View Income Restrictions</button>
 
-    <div class="accordion-content" id="modal2"><span class="close-btn-x" onclick="toggleAccordion('modal2')">x</span>
+    <div class="accordion-content" id="modal1"><span class="close-btn-x" onclick="toggleAccordion('modal1')">x</span>
     
-    <h2 class="eligibility-title"></h2>
+    
     
     <table class="table">
         <thead class="thead">
@@ -1489,12 +1427,10 @@ counties.forEach((item) => {
                 
             </div>
  
-<div class="accordion-container"><button class="accordion-button" onclick="toggleAccordion('modal3')">View Income Restrictions</button>
+<h2 class="eligibility-title"></h2>           
+<div class="accordion-container"><button class="accordion-button" onclick="toggleAccordion('modal2')">View Income Restrictions</button>
 
-    <div class="accordion-content" id="modal3"><span class="close-btn-x" onclick="toggleAccordion('modal3')">x</span>
-    
-    <h2 class="eligibility-title"></h2>
-    
+    <div class="accordion-content" id="modal2"><span class="close-btn-x" onclick="toggleAccordion('modal2')">x</span>
     <table class="table">
         <thead class="thead">
             <tr class="tr">
@@ -1558,12 +1494,11 @@ counties.forEach((item) => {
         <p>Application Fee: $90</p>
         </div>
         
-        <div class="accordion-container"><button class="accordion-button" onclick="toggleAccordion('modal4')">View Income Restrictions</button>
-        
-        <div class="accordion-content" id="modal4"><span class="close-btn-x" onclick="toggleAccordion('modal4')">x</span>
-        
-        <h2 class="eligibility-title">Income Eligibility Requirements</h2>
-        
+        <h2 class="eligibility-title"></h2>        
+        <div class="accordion-container"><button class="accordion-button" onclick="toggleAccordion('modal3')">View Income Restrictions</button>
+
+        <div class="accordion-content" id="modal3"><span class="close-btn-x" onclick="toggleAccordion('modal3')">x</span>
+                
         <table class="table">
             <thead class="thead">
                 <tr class="tr">
