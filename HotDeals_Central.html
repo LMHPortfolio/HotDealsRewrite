@@ -1170,7 +1170,6 @@ const sumterTable = [
     ]
 ];
     
-   
 
 
 
@@ -1210,35 +1209,31 @@ return tbody;
     //Table data selected based on the county specified. County name is CASE SENSITIVE and must include the word County:
     //need additional table cases that include county and whether affordable has been specified.
 
-   
-
-const counties = document.querySelectorAll('.countyName');
+    const counties = document.querySelectorAll('.countyName');
 const incomeLimit = document.querySelectorAll('.eligibility-title');
 
 let incomeTableCentral;
 let incomeTableSumter;
 
-
-counties.forEach((county) => {
+counties.forEach((county, index) => {
     const tableContainer = county.parentElement.querySelector('.tbody-container');
+    const item = incomeLimit[index]; // Get the corresponding item from incomeLimit based on the index
     
-        incomeLimit.forEach((item) => {
-
-
-     //I AM ALWAYS HITTING THE ELSE STATEMENT HERE REGARDLESS OF IF INNER HTML EXISTS:       
-            
-            if(item.innerHTML === 'View Income Restrictions') {
-                incomeTableCentral = centralTable[0];
-                incomeTableSumter = sumterTable[0];
-            } else {
+    switch (true) {
+        case item.dataset.value === "true":
+            console.log('true');
+            incomeTableCentral = centralTable[0];
+            incomeTableSumter = sumterTable[0]; 
+            break;
+        default:
+            console.log('false')
             incomeTableCentral = centralTable[1];
             incomeTableSumter = sumterTable[1];
-        }  
+            break;
+    } 
 
-        })
-    
-  
-    
+
+
     if(tableContainer) {
                 switch (county.innerHTML) {
 
@@ -1269,9 +1264,69 @@ counties.forEach((county) => {
 
 
 
+
+
+
+
+   
+
+/* const counties = document.querySelectorAll('.countyName');
+const incomeLimit = document.querySelectorAll('.eligibility-title');
+
+let incomeTableCentral;
+let incomeTableSumter;
+
+
+counties.forEach((county) => {
+    const tableContainer = county.parentElement.querySelector('.tbody-container');
+    
+    incomeLimit.forEach((item) => {
+    switch (true) {
+
+
+        case item.dataset.value === "true":
+        console.log('true');
+                incomeTableCentral = centralTable[0];
+                incomeTableSumter = sumterTable[0]; 
+            break;
+       default :
+            console.log('false')
+            incomeTableCentral = centralTable[1];
+            incomeTableSumter = sumterTable[1];
+            break;
+    } 
+}); */
+
+            
+/*      if (item.innerHTML !== undefined && item.innerHTML !== null && item.innerHTML !== "") {
+    incomeTableCentral = centralTable[0];
+    incomeTableSumter = sumterTable[0];
+        return;
+} else {
+    incomeTableCentral = centralTable[1];
+    incomeTableSumter = sumterTable[1];
+    console.log('else statement hit')
+    return;
+} */
+/* 
+
+
+            if(item.innerHTML !== undefined && item.innerHTML !== null && item.innerHTML !== "") {
+                incomeTableCentral = centralTable[0];
+                incomeTableSumter = sumterTable[0];
+            } else if(!item.innerHTML) {
+            incomeTableCentral = centralTable[1];
+            incomeTableSumter = sumterTable[1];
+        }  else {
+            console.log('was not able to determine the income innerHTML');
+        }
+ 
+        })
+    */
+  
     
 
-
+    
 
 
     
@@ -1365,7 +1420,7 @@ counties.forEach((county) => {
                         </div>
                 
             </div>
-<h2 class="eligibility-title">View Income Restrictions</h2>
+<h2 class="eligibility-title" data-value="true">View Income Restrictions</h2>
 <div class="accordion-container"><button class="accordion-button" onclick="toggleAccordion('modal1')">View Income Restrictions</button>
 
     <div class="accordion-content" id="modal1"><span class="close-btn-x" onclick="toggleAccordion('modal1')">x</span>
@@ -1427,7 +1482,7 @@ counties.forEach((county) => {
                 
             </div>
  
-<h2 class="eligibility-title"></h2>           
+<h2 class="eligibility-title" data-value="false"></h2>           
 <div class="accordion-container"><button class="accordion-button" onclick="toggleAccordion('modal2')">View Income Restrictions</button>
 
     <div class="accordion-content" id="modal2"><span class="close-btn-x" onclick="toggleAccordion('modal2')">x</span>
@@ -1494,7 +1549,7 @@ counties.forEach((county) => {
         <p>Application Fee: $90</p>
         </div>
         
-        <h2 class="eligibility-title"></h2>        
+        <h2 class="eligibility-title" data-value="false"></h2>        
         <div class="accordion-container"><button class="accordion-button" onclick="toggleAccordion('modal3')">View Income Restrictions</button>
 
         <div class="accordion-content" id="modal3"><span class="close-btn-x" onclick="toggleAccordion('modal3')">x</span>
