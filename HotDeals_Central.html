@@ -422,12 +422,24 @@ margin: auto!important;
 padding: 20px!important; 
 }
 
+@media screen and (max-width: 820px) {
+.card-body {
+   
+    max-width: 325px;
+    
+   
+ }   
+ .county-title {
+   
+    width: 100%;
+}
+}
+
 @media screen and (max-width: 768px) {
 
 .row-container {
 display: flex!important;
 flex-direction: row;
-    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))!important; */
     
 }
 }
@@ -503,8 +515,19 @@ cursor: pointer;
 color: #000000!important;
 font-family: 'Open Sans', sans-serif!important;
 text-transform: uppercase;
-font-size: 1.5rem!important;
+font-size: 1.5rem;
 font-weight: 700;
+
+}
+
+@media screen and (max-width: 820px) {
+
+    .property-name {
+
+        font-size: 1.2rem;
+
+    }
+
 
 }
 
@@ -526,6 +549,17 @@ color: unset;
 
 }
 
+@media screen and (max-width: 820px) {
+
+    .special-pricing {
+
+        font-size: 1.4rem;
+
+    }
+
+
+}
+
 .pricing-grid {
 
     display: grid;
@@ -536,6 +570,21 @@ color: unset;
     place-content: center;
     justify-content: space-evenly;
     gap: 1.2rem;
+
+
+}
+
+
+
+@media screen and (max-width: 820px) {
+
+.pricing-grid {
+
+    font-size: 1.4rem;
+    gap: .9rem;
+
+
+}
 
 
 }
@@ -556,6 +605,23 @@ color: unset;
     display: inline;
     color: red;
 }
+
+@media screen and (max-width: 820px) {
+
+.price-item {
+
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: 1.2rem;
+
+}
+
+
+}
+
+
+
+
   
 .card {
 
