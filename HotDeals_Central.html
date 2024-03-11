@@ -413,7 +413,7 @@ text-transform: none!important;
 margin-left: 65px!important;
 
 }
-.main-container {
+.row-container {
 
 display: flex;
 flex-direction: column;
@@ -424,7 +424,7 @@ padding: 20px!important;
 
 @media screen and (max-width: 768px) {
 
-.main-container {
+.row-container {
 display: flex!important;
 flex-direction: row;
     /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))!important; */
@@ -435,7 +435,7 @@ flex-direction: row;
 
 @media screen and (max-width: 480px) {
 
-.main-container {
+.row-container {
 
     max-width: 1140px!important;
     
@@ -1120,6 +1120,8 @@ label {
    
     
 const centralTable = [ 
+
+//1st table contains values for 60% income restriction for Central counties (Lake, Orange, Osceola, Seminole):
     
     [
         { 'householdSize': '1', 'income': '$36,900' },
@@ -1131,6 +1133,7 @@ const centralTable = [
         { 'householdSize': '7', 'income': '$65,340' },
         { 'householdSize': '8', 'income': '$69,540' },
     ],
+    //2nd table contains values for 80% income restriction for Central counties (Lake, Orange, Osceola, Seminole):
     [
         { 'householdSize': '1', 'income': '$central,80' },
         { 'householdSize': '2', 'income': '$42,180' },
@@ -1144,16 +1147,20 @@ const centralTable = [
 ];
 
 const sumterTable = [
+
+//1st table contains values for 60% income restriction for Sumter county:
+
     [
-    { 'householdSize': '1', 'income': '$33,480' },
-    { 'householdSize': '2', 'income': '$38,280' },
-    { 'householdSize': '3', 'income': '$43,080' },
-    { 'householdSize': '4', 'income': '$47,820' },
-    { 'householdSize': '5', 'income': '$51,660' },
-    { 'householdSize': '6', 'income': '$55,500' },
-    { 'householdSize': '7', 'income': '$59,340' },
-    { 'householdSize': '8', 'income': '$63,130' }, 
+        { 'householdSize': '1', 'income': '$33,480' },
+        { 'householdSize': '2', 'income': '$38,280' },
+        { 'householdSize': '3', 'income': '$43,080' },
+        { 'householdSize': '4', 'income': '$47,820' },
+        { 'householdSize': '5', 'income': '$51,660' },
+        { 'householdSize': '6', 'income': '$55,500' },
+        { 'householdSize': '7', 'income': '$59,340' },
+        { 'householdSize': '8', 'income': '$63,130' }, 
     ],
+    //2nd table contains values for 80% income restriction for Sumter county:
 
     [
 
@@ -1170,7 +1177,6 @@ const sumterTable = [
     ]
 ];
     
-
 
 
    
@@ -1207,32 +1213,32 @@ return tbody;
     
     
     //Table data selected based on the county specified. County name is CASE SENSITIVE and must include the word County:
-    //need additional table cases that include county and whether affordable has been specified.
+    //This section now checks for which county was named and whether affordable has been specified [insert where].
 
-    const counties = document.querySelectorAll('.countyName');
+const counties = document.querySelectorAll('.countyName');
 const incomeLimit = document.querySelectorAll('.eligibility-title');
 
 let incomeTableCentral;
 let incomeTableSumter;
 
 counties.forEach((county, index) => {
-    const tableContainer = county.parentElement.querySelector('.tbody-container');
+    
     const item = incomeLimit[index]; // Get the corresponding item from incomeLimit based on the index
     
     switch (true) {
         case item.dataset.value === "true":
-            console.log('true');
+            //console.log('true');
             incomeTableCentral = centralTable[0];
             incomeTableSumter = sumterTable[0]; 
             break;
         default:
-            console.log('false')
+            //console.log('false')
             incomeTableCentral = centralTable[1];
             incomeTableSumter = sumterTable[1];
             break;
     } 
 
-
+    const tableContainer = county.parentElement.querySelector('.tbody-container'); //check that table-container exists
 
     if(tableContainer) {
                 switch (county.innerHTML) {
@@ -1261,78 +1267,10 @@ counties.forEach((county, index) => {
            
 });
 
-
-
-
-
-
-
-
-   
-
-/* const counties = document.querySelectorAll('.countyName');
-const incomeLimit = document.querySelectorAll('.eligibility-title');
-
-let incomeTableCentral;
-let incomeTableSumter;
-
-
-counties.forEach((county) => {
-    const tableContainer = county.parentElement.querySelector('.tbody-container');
     
-    incomeLimit.forEach((item) => {
-    switch (true) {
-
-
-        case item.dataset.value === "true":
-        console.log('true');
-                incomeTableCentral = centralTable[0];
-                incomeTableSumter = sumterTable[0]; 
-            break;
-       default :
-            console.log('false')
-            incomeTableCentral = centralTable[1];
-            incomeTableSumter = sumterTable[1];
-            break;
-    } 
-}); */
-
-            
-/*      if (item.innerHTML !== undefined && item.innerHTML !== null && item.innerHTML !== "") {
-    incomeTableCentral = centralTable[0];
-    incomeTableSumter = sumterTable[0];
-        return;
-} else {
-    incomeTableCentral = centralTable[1];
-    incomeTableSumter = sumterTable[1];
-    console.log('else statement hit')
-    return;
-} */
-/* 
-
-
-            if(item.innerHTML !== undefined && item.innerHTML !== null && item.innerHTML !== "") {
-                incomeTableCentral = centralTable[0];
-                incomeTableSumter = sumterTable[0];
-            } else if(!item.innerHTML) {
-            incomeTableCentral = centralTable[1];
-            incomeTableSumter = sumterTable[1];
-        }  else {
-            console.log('was not able to determine the income innerHTML');
-        }
- 
-        })
-    */
-  
+</script>
     
-
-    
-
-
-    
-    </script>
-    
-    <script type="module">
+<script type="module">
         
     /*UPDATES THE DATE ON ALL CARDS BY UPDATING THE VALUE OF CONST DATE = "" BELOW. BE SURE TO LEAVE QUOTATION MARKS  */
     
@@ -1345,7 +1283,7 @@ counties.forEach((county) => {
         item.innerHTML = `Updated:${date}. Availability subject to change. See website for pricing details.`);
         
     
-    </script>
+</script>
 
 
 
@@ -1390,12 +1328,10 @@ counties.forEach((county) => {
 </select>
 </div>
 
-<section class="featured-community">
+< class="featured-community">
 <h1 id="featured-community-h1" class="county-title">Featured Communities</h1>
-
-<div class="main-container">
-    
-    <!--card starts here-->
+<!--row/card starts here-->
+<div class="row-container">  
     <div class="card-container">
         <div class="card">
             <div class="countyName">Sumter County</div>
@@ -1420,8 +1356,64 @@ counties.forEach((county) => {
                         </div>
                 
             </div>
-<h2 class="eligibility-title" data-value="true">View Income Restrictions</h2>
-<div class="accordion-container"><button class="accordion-button" onclick="toggleAccordion('modal1')">View Income Restrictions</button>
+    <h2 class="eligibility-title" data-value="true">View Income Restrictions</h2>
+    <div class="accordion-container"><button class="accordion-button" onclick="toggleAccordion('modal1')">View Income Restrictions</button>
+
+    <div class="accordion-content" id="modal1"><span class="close-btn-x" onclick="toggleAccordion('modal1')">x</span>
+    
+    
+    
+    <table class="table">
+        <thead class="thead">
+            <tr class="tr">
+                <th class="th" scope="col">Household Size</th>
+                <th class="th" scope="col">Max Allowable Household Income for 60%</th>
+            </tr>
+        </thead>
+    </table>
+    
+    <table class="tbody-container table">
+    </table>
+    </div>
+    </div>
+    <button class="CTA-apply"><a href="https://www.lakesumterapartments.com/letsgetstarted" target="_blank">Get Started</a></button>
+    
+    <p class="date-updated"></p>
+
+
+</div>
+</div>
+</div>
+
+<!--row/card ends here-->
+<!--row/card starts here-->
+<div class="row-container">
+        <div class="card-container">
+        <div class="card">
+            <div class="countyName">Sumter County</div>
+            <div class="image-container-wrapper"><a href="https://www.lakesumterapartments.com/" target="_blank">
+                <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/lake%20sumter_012624.jpg');">&nbsp;</div>
+                </a></div>
+                
+            <div>ICON ANDPHONE NUMBER</div>
+            <div class="card-body">
+                       
+                <div class="card-title">
+                    <h2 class="property-name"><a href="https://www.lakesumterapartments.com/" target="_blank">Lake Sumter Apartments</a></h2>
+                    <div class="address">*PIN* 123 Mayberry St, Orlando, FL 32801</div>
+                </div>
+                
+                    <h3 class="special-pricing">Special Limited Time Pricing!</h3>
+                        <div class="pricing-grid">
+                            <div class="price-item">1 Bedroom at <p>$price</p></div>
+                            <div class="price-item">2 Bedroom at <p>$price</p></div>
+                            <div class="price-item">3 Bedroom at <p>$price</p></div>
+                            <div class="price-item">4 Bedroom at <p>$price</p></div>
+                        </div>
+                
+            </div>
+    <h2 class="eligibility-title" data-value="true">View Income Restrictions</h2>
+    <div class="accordion-container"><button class="accordion-button" onclick="toggleAccordion('modal1')">View Income Restrictions</button>
 
     <div class="accordion-content" id="modal1"><span class="close-btn-x" onclick="toggleAccordion('modal1')">x</span>
     
@@ -1449,133 +1441,131 @@ counties.forEach((county) => {
 </div>
 </div>
 </div>
+<!--row/card ends here-->
 </section>
 
 <section class="county-section" id="Orange">
 <h1 class="county-title">Orange County</h1>
 <br>
-<div class="main-container">
-    
-    <!--card starts here-->
+<!--row/card starts here-->
+<div class="row-container">
     <div class="card-container">
-        <div class="card">
-            <div class="countyName">Orange County</div>
-            <div class="image-container-wrapper"><a href="https://www.lakesumterapartments.com/" target="_blank">
-                <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/lake%20sumter_012624.jpg');">&nbsp;</div>
-                </a></div>
-                
-            <div>ICON ANDPHONE NUMBER</div>
-            <div class="card-body">
-                       
-                <div class="card-title">
-                    <h2 class="property-name"><a href="https://www.lakesumterapartments.com/" target="_blank">Lake Sumter Apartments</a></h2>
-                    <div class="address">*PIN* 123 Mayberry St, Orlando, FL 32801</div>
-                </div>
-                
-                    <h3 class="special-pricing">Special Limited Time Pricing!</h3>
-                        <div class="pricing-grid">
-                            <div class="price-item">1 Bedroom at <p>$price</p></div>
-                            <div class="price-item">2 Bedroom at <p>$price</p></div>
-                            <div class="price-item">3 Bedroom at <p>$price</p></div>
-                            <div class="price-item">4 Bedroom at <p>$price</p></div>
-                        </div>
-                
+    <div class="card">
+        <div class="countyName">Sumter County</div>
+        <div class="image-container-wrapper"><a href="https://www.lakesumterapartments.com/" target="_blank">
+            <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/lake%20sumter_012624.jpg');">&nbsp;</div>
+            </a></div>
+            
+        <div>ICON ANDPHONE NUMBER</div>
+        <div class="card-body">
+                   
+            <div class="card-title">
+                <h2 class="property-name"><a href="https://www.lakesumterapartments.com/" target="_blank">Lake Sumter Apartments</a></h2>
+                <div class="address">*PIN* 123 Mayberry St, Orlando, FL 32801</div>
             </div>
- 
-<h2 class="eligibility-title" data-value="false"></h2>           
-<div class="accordion-container"><button class="accordion-button" onclick="toggleAccordion('modal2')">View Income Restrictions</button>
+            
+                <h3 class="special-pricing">Special Limited Time Pricing!</h3>
+                    <div class="pricing-grid">
+                        <div class="price-item">1 Bedroom at <p>$price</p></div>
+                        <div class="price-item">2 Bedroom at <p>$price</p></div>
+                        <div class="price-item">3 Bedroom at <p>$price</p></div>
+                        <div class="price-item">4 Bedroom at <p>$price</p></div>
+                    </div>
+            
+        </div>
+<h2 class="eligibility-title" data-value="true">View Income Restrictions</h2>
+<div class="accordion-container"><button class="accordion-button" onclick="toggleAccordion('modal1')">View Income Restrictions</button>
 
-    <div class="accordion-content" id="modal2"><span class="close-btn-x" onclick="toggleAccordion('modal2')">x</span>
-    <table class="table">
-        <thead class="thead">
-            <tr class="tr">
-                <th class="th" scope="col">Household Size</th>
-                <th class="th" scope="col">Max Allowable Household Income for 60%</th>
-            </tr>
-        </thead>
-    </table>
-    
-    <table class="tbody-container table">
-    </table>
-    </div>
-    </div>
-    <button class="CTA-apply"><a href="https://www.lakesumterapartments.com/letsgetstarted" target="_blank">Get Started</a></button>
-    
-    <p class="date-updated"></p>
+<div class="accordion-content" id="modal1"><span class="close-btn-x" onclick="toggleAccordion('modal1')">x</span>
+
+
+
+<table class="table">
+    <thead class="thead">
+        <tr class="tr">
+            <th class="th" scope="col">Household Size</th>
+            <th class="th" scope="col">Max Allowable Household Income for 60%</th>
+        </tr>
+    </thead>
+</table>
+
+<table class="tbody-container table">
+</table>
+</div>
+</div>
+<button class="CTA-apply"><a href="https://www.lakesumterapartments.com/letsgetstarted" target="_blank">Get Started</a></button>
+
+<p class="date-updated"></p>
 
 
 </div>
 </div>
 </div>
 </div>
-
+<!--row/card ends here-->
 <br>
 </section>
 <section class="county-section" id="Osceola">
     <h1 class="county-title">Osceola County</h1>
 <br>
-    <div class="main-container">
-        <!--card starts here-->
-        <div class="card-container">
-        <div class="countyName">Osceola County</div>
-        <div class="card">
+<!--row/card starts here-->
+<div class="row-container">
+    <div class="card-container">
+    <div class="card">
+        <div class="countyName">Sumter County</div>
         <div class="image-container-wrapper"><a href="https://www.lakesumterapartments.com/" target="_blank">
-        <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/lake%20sumter_012624.jpg');">&nbsp;</div>
-        </a></div>
-        
-        <h2 class="property-name"><a href="https://www.lakesumterapartments.com/" target="_blank">Lake Sumter Apartments</a></h2>
-        
-        
+            <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/lake%20sumter_012624.jpg');">&nbsp;</div>
+            </a></div>
+            
+        <div>ICON ANDPHONE NUMBER</div>
         <div class="card-body">
-            <img class="map-pin-icon" alt="map-pin-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/location-dot-solid.png">
-                
-                <h4 class="address"><a href="https://maps.app.goo.gl/Q6UkghWb2DwFuEpt5" target="_blank">10816 NE 87th Loop<br />
-            Lady Lake, FL 32162</h4>
-            </a>
+                   
+            <div class="card-title">
+                <h2 class="property-name"><a href="https://www.lakesumterapartments.com/" target="_blank">Lake Sumter Apartments</a></h2>
+                <div class="address">*PIN* 123 Mayberry St, Orlando, FL 32801</div>
+            </div>
+            
+                <h3 class="special-pricing">Special Limited Time Pricing!</h3>
+                    <div class="pricing-grid">
+                        <div class="price-item">1 Bedroom at <p>$price</p></div>
+                        <div class="price-item">2 Bedroom at <p>$price</p></div>
+                        <div class="price-item">3 Bedroom at <p>$price</p></div>
+                        <div class="price-item">4 Bedroom at <p>$price</p></div>
+                    </div>
             
         </div>
-         
-            <div class="unit-details">
-                <div><img class="bed-icon" alt="bed-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/bed-solid.png">3 Beds</div>
-        
-                <div><img class="bathroom-icon" alt="bathroom-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/bath-solid.png">2 Baths</div>
-        
-                <div>Rent:<img class="dollar-sign-icon" alt="dollar-sign-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/dollar-sign-solid.png" >1,085</div>
-            </div>
-        
-        <div class="admin-details">
-        <p>Deposit Starting at: $1,200</p>
-        
-        <p>Application Fee: $90</p>
-        </div>
-        
-        <h2 class="eligibility-title" data-value="false"></h2>        
-        <div class="accordion-container"><button class="accordion-button" onclick="toggleAccordion('modal3')">View Income Restrictions</button>
+<h2 class="eligibility-title" data-value="true">View Income Restrictions</h2>
+<div class="accordion-container"><button class="accordion-button" onclick="toggleAccordion('modal1')">View Income Restrictions</button>
 
-        <div class="accordion-content" id="modal3"><span class="close-btn-x" onclick="toggleAccordion('modal3')">x</span>
-                
-        <table class="table">
-            <thead class="thead">
-                <tr class="tr">
-                    <th class="th" scope="col">Household Size</th>
-                    <th class="th" scope="col">Max Allowable Household Income for 60%</th>
-                </tr>
-            </thead>
-        </table>
-        
-        <table class="tbody-container table">
-        </table>
-        </div>
-        </div>
-        <button class="CTA-apply"><a href="https://www.lakesumterapartments.com/letsgetstarted" target="_blank">Get Started</a></button>
-        
-        <p class="date-updated"></p>
-        </div>
-        </div>
-        </div>
-        </div>
+<div class="accordion-content" id="modal1"><span class="close-btn-x" onclick="toggleAccordion('modal1')">x</span>
 
-    </div>
+
+
+<table class="table">
+    <thead class="thead">
+        <tr class="tr">
+            <th class="th" scope="col">Household Size</th>
+            <th class="th" scope="col">Max Allowable Household Income for 60%</th>
+        </tr>
+    </thead>
+</table>
+
+<table class="tbody-container table">
+</table>
+</div>
+</div>
+<button class="CTA-apply"><a href="https://www.lakesumterapartments.com/letsgetstarted" target="_blank">Get Started</a></button>
+
+<p class="date-updated"></p>
+
+
+</div>
+</div>
+</div>
+</div>
+<!--row/card ends here-->
+
+    
 </section>
 
 </body>
