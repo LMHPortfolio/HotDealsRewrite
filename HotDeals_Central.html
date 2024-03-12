@@ -380,10 +380,12 @@ margin-right: 65px!important;
 
 @media screen and (max-width: 480px) {
 
-#featured-community-h1 {
-    font-size: 1rem!important;
-    margin-left: 28px!important;
-}
+    #featured-community-h1 {
+        font-size: 1rem;
+        margin: 1rem;
+        text-align: center;
+        
+    }
 }
 
 .county-title {
@@ -400,6 +402,19 @@ margin-left: 28px!important;
 margin-right: 65px!important;
 }
 
+.phone-number {
+
+font-size: 1rem;
+letter-spacing: .05rem;
+font-weight: 600;
+padding-left: 7rem;
+padding-top: 1rem;
+padding-bottom: 1rem;
+
+}
+
+
+
 @media screen and (max-width:1024px) {
     
     .county-title {
@@ -408,13 +423,50 @@ margin-right: 65px!important;
     }
 }
 
-@media screen and (max-width: 480px) and (min-width: 200px) {
+@media screen and (min-width:275px) and (max-width:375px) {
 
-.county-title {
-    font-size: .95rem!important;
-    padding: 0!important;
-    margin-left: 28px!important;
+    .county-title {
+        font-size: .95rem!important;
+        padding: 0!important;
+        margin-left: 28px!important;
+    }
+
+    .card {
+
+        padding: unset;
+        padding-left: unset;
+        
+    }
+
+    .phone-number {
+        padding-left: 5rem;
+        
+    }
+
+    .image-container {
+
+        max-width: 300px;
+        max-height: 320px;
+    }
+    
+
 }
+
+@media screen and (min-width:376px) and (max-width:420px) {
+
+    .image-container {
+
+        max-width: 330px;
+        max-height: 320px;
+        
+        }
+
+    .phone-number {
+    
+        padding-left: 5rem;
+        
+    }     
+
 }
 
 
@@ -556,7 +608,7 @@ font-weight: 700;
 
     .property-name {
 
-        font-size: 1.2rem;
+        font-size: 1.1rem;
 
     }
 
@@ -612,7 +664,6 @@ color: unset;
 .pricing-grid {
 
     
-    grid-template-columns: repeat(1, 1fr) ;
     font-size: 1.4rem;
     gap: .9rem;
 
@@ -663,7 +714,7 @@ color: unset;
 
 display: flex;
 flex-direction: row;
-margin: 1rem;
+
 flex-wrap: nowrap;
 border-radius: 10px!important;
 box-shadow:  1px 5px 5px 1px #b3b2b2!important;
@@ -711,7 +762,7 @@ background-color: #eeeeee!important;
 
 }
   
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) {
 
     .card {
 
@@ -771,7 +822,6 @@ padding-right: .25rem;
         width: 375px;
         height: 375px;
         
-        
     }
 
     .map-pin-icon {
@@ -790,6 +840,12 @@ padding-right: .25rem;
 
         padding-left: .5rem;
     }
+
+    .address {
+
+        font-size: 1rem;
+
+    }
   
 }
 
@@ -798,30 +854,22 @@ padding-right: .25rem;
     width: 1.5rem;
     padding-right: .75rem;
     text-align: center;
-    
 
 }
 
-.phone-number {
 
-    font-size: 1rem;
-    letter-spacing: .05rem;
-    padding-left: 110px;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    
-}
+
 
 .address {
 
-font-family: 'Open Sans', sans-serif!important;
-font-size: 1.1rem!important;
-line-height: 1.6rem!important;
-display: inline-flex!important;
-align-items: baseline!important;
-text-transform: none!important; 
-font-weight: 700;
-color: #000000!important;
+    font-family: 'Open Sans', sans-serif!important;
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+    display: inline-flex!important;
+    align-items: baseline!important;
+    text-transform: none!important; 
+    font-weight: 700;
+    color: #000000!important;
 } 
 
 .address a {
@@ -1530,7 +1578,7 @@ counties.forEach((county, index) => {
                             <thead class="thead">
                                 <tr class="tr">
                                     <th class="th" scope="col">Household Size</th>
-                                    <th class="th" scope="col">Max Allowable Household Income for 60%</th>
+                                    <th class="th" scope="col">Max Allowable Household Income</th>
                                 </tr>
                             </thead>
                         </table>
@@ -1593,7 +1641,7 @@ counties.forEach((county, index) => {
                             <thead class="thead">
                                 <tr class="tr">
                                     <th class="th" scope="col">Household Size</th>
-                                    <th class="th" scope="col">Max Allowable Household Income for 60%</th>
+                                    <th class="th" scope="col">Max Allowable Household Income</th>
                                 </tr>
                             </thead>
                         </table>
@@ -1661,7 +1709,7 @@ counties.forEach((county, index) => {
                             <thead class="thead">
                                 <tr class="tr">
                                     <th class="th" scope="col">Household Size</th>
-                                    <th class="th" scope="col">Max Allowable Household Income for 60%</th>
+                                    <th class="th" scope="col">Max Allowable Household Income</th>
                                 </tr>
                             </thead>
                         </table>
@@ -1730,7 +1778,7 @@ counties.forEach((county, index) => {
                             <thead class="thead">
                                 <tr class="tr">
                                     <th class="th" scope="col">Household Size</th>
-                                    <th class="th" scope="col">Max Allowable Household Income for 60%</th>
+                                    <th class="th" scope="col">Max Allowable Household Income</th>
                                 </tr>
                             </thead>
                         </table>
