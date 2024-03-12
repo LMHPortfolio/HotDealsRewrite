@@ -24,6 +24,13 @@ section {
     margin: auto;
 }
 
+
+.container-bs3 {
+    width:unset;
+    padding: unset;
+    margin: unset;
+}
+
 #intro-container {
 
     display: flex!important;
@@ -333,9 +340,8 @@ margin-left: 60px!important;
 
 .county-dropdown-container label {
 
-font-size: 1.3rem!important;
-font-size: 1.4rem!important;
-font-weight: 200!important;
+font-size: 1.3rem;
+font-weight: 200;
 letter-spacing: .03rem!important;
 }
 
@@ -363,6 +369,8 @@ background-color: rgb(232, 232, 232)!important;
 margin-bottom: 0;
 }
 
+
+
 #featured-community-h1 {
 
 color: #ffffff!important;
@@ -370,7 +378,7 @@ background-color: #883720;
 padding:4px;
 padding-left: 15px;
 font-family: 'Poppins', sans-serif!important;
-font-size: 1.5rem!important;
+font-size: 1.5rem;
 font-weight: 600!important;
 text-transform: uppercase!important;
 margin-left: 28px!important;
@@ -388,6 +396,8 @@ margin-right: 65px!important;
     }
 }
 
+
+
 .county-title {
 
 color: #ffffff!important;
@@ -403,14 +413,18 @@ margin-right: 65px!important;
 }
 
 .phone-number {
-
+    
 font-size: 1rem;
 letter-spacing: .05rem;
 font-weight: 600;
-padding-left: 7rem;
+padding-left: 5rem!important;
 padding-top: 1rem;
 padding-bottom: 1rem;
 
+}
+
+.phone-number::before {
+    display: none!important;
 }
 
 
@@ -423,7 +437,7 @@ padding-bottom: 1rem;
     }
 }
 
-@media screen and (min-width:275px) and (max-width:375px) {
+@media screen and (min-width:275px) and (max-width:376px) {
 
     .county-title {
         font-size: .95rem!important;
@@ -438,34 +452,39 @@ padding-bottom: 1rem;
         
     }
 
-    .phone-number {
-        padding-left: 5rem;
-        
-    }
+   
 
     .image-container {
 
-        max-width: 300px;
+        max-width: 267px;
         max-height: 320px;
+    }
+
+    .phone-number {
+
+        text-align: center;
+        padding-left: unset!important;
+
     }
     
 
 }
 
-@media screen and (min-width:376px) and (max-width:420px) {
+@media screen and (min-width:376px) and (max-width:431px) {
 
     .image-container {
 
-        max-width: 330px;
+        max-width: 260px;
         max-height: 320px;
         
         }
 
     .phone-number {
+
+        text-align: center;
+        padding-left: unset!important;
+    }    
     
-        padding-left: 5rem;
-        
-    }     
 
 }
 
@@ -629,6 +648,7 @@ color: unset;
     font-style: italic;
     color: red;
     font-weight: 600;
+    padding: 2rem;
 
 }
 
@@ -820,7 +840,7 @@ padding-right: .25rem;
 @media screen and (max-width: 820px){ 
 
     .image-container {
-        width: 375px;
+        width: 337px;
         height: 375px;
         margin: auto;
         
@@ -1293,6 +1313,8 @@ color: #646464;
 label {
 
     margin: 0!important;
+    font-size: 1rem;
+    font-weight: 400;
 }
 }
 
@@ -1325,9 +1347,7 @@ label {
 
 /*Below is where you would update the values for eligibility tables. You only need to update the value in the income column and not any of the functions below */
 
-
-   
-    
+ 
 const centralTable = [ 
 
 //1st table contains values for 60% income restriction for Central counties (Lake, Orange, Osceola, Seminole):
@@ -1386,12 +1406,10 @@ const sumterTable = [
     ]
 ];
     
-
-
    
-    //Table element generator:
+//Table element generator:
     
-    function generateTable(tableData) {
+function generateTable(tableData) {
 
 const tbody = document.createElement('tbody');
 tbody.classList.add('tbody');
@@ -1421,8 +1439,8 @@ return tbody;
 }
     
     
-    //Table data selected based on the county specified. County name is CASE SENSITIVE and must include the word County:
-    //This section now checks for which county was named and whether affordable has been specified [insert where].
+//Table data selected based on the county specified. County name is CASE SENSITIVE and must include the word County:
+//This section now checks for which county was named and whether affordable has been specified on the ".elibility-title h2" in the "data-value = [60 or 80]" property.
 
 const counties = document.querySelectorAll('.countyName');
 const incomeLimit = document.querySelectorAll('.eligibility-title');
@@ -1432,16 +1450,16 @@ let incomeTableSumter;
 
 counties.forEach((county, index) => {
     
-    const item = incomeLimit[index]; // Get the corresponding item from incomeLimit based on the index
+    const item = incomeLimit[index]; // Get the corresponding item from incomeLimit based on the current county index
     
     switch (true) {
         case item.dataset.value === "60":
-            //console.log('true');
+            
             incomeTableCentral = centralTable[0];
             incomeTableSumter = sumterTable[0]; 
             break;
         default:
-            //console.log('false')
+            
             incomeTableCentral = centralTable[1];
             incomeTableSumter = sumterTable[1];
             break;
@@ -1472,8 +1490,6 @@ counties.forEach((county, index) => {
             } else {
                  console.log('no .tbody-container found for', county.innerHTML);
             }
-         
-           
 });
 
     
@@ -1524,7 +1540,7 @@ counties.forEach((county, index) => {
 </div>
 </div>
 
-<main>
+
 <div class="county-dropdown-container"><label for="county-dropdown">Select Your County:</label> <select id="county-select" onchange="handleCountySelect()">
     <option value="#Orange">Orange</option>
     <option value="#Osceola">Osceola</option>
@@ -1534,7 +1550,7 @@ counties.forEach((county, index) => {
 </select>
 </div>
 
-<section class="featured-community">
+<section class="county-section featured-community" id="featured-community">
 <h1 id="featured-community-h1" class="county-title">Featured Communities</h1>
 <!--row/card starts here-->
 <div class="row-container">  
