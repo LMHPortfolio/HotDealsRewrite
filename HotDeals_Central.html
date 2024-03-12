@@ -45,16 +45,25 @@ section {
 
 #intro-h1 {
 
-    flex: 1!important; 
     margin: auto;
     margin-top: 30px;
     text-align: center;
-    padding-right: 20px!important; 
     font-family: 'Poppins', sans-serif!important;
     font-size: 2rem!important;
     text-transform: uppercase;
     letter-spacing: .04rem!important;
     color: #883720!important;
+    font-weight: 800;
+    padding-bottom: 1.5rem;
+}
+
+@media screen and (max-width:820px) {
+
+        #intro-h1 {
+
+        padding-bottom: 1rem;
+    }
+
 }
 
 #intro-sub {
@@ -79,16 +88,16 @@ section {
 
 #intro-pic {
 
-flex-shrink: 0!important; 
-width: 1200px; 
-height: 350px!important;
-background-repeat: no-repeat!important;
-background-size: cover!important;
-background-position: left 60% bottom 30%!important;
-background-image:url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/fountains%20at%20millenia_pool%20(17)_rev.jpg');
-border-radius: 10px!important;
-margin-top: 4rem!important;
-margin: auto;
+    flex-shrink: 0!important; 
+    width: 1200px; 
+    height: 350px!important;
+    background-repeat: no-repeat!important;
+    background-size: cover!important;
+    background-position: left 60% bottom 30%!important;
+    background-image:url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/fountains%20at%20millenia_pool%20(17)_rev.jpg');
+    border-radius: 10px!important;
+    margin: auto;
+
 }
 
 
@@ -1093,7 +1102,7 @@ text-align: center!important;
 display: flex;
 flex-direction: row;
 font-family: 'Open Sans', sans-serif;
-font-size: 1.2rem;
+font-size: 1rem;
 text-align: center;
 text-transform: none;
 font-weight: 600;
@@ -1212,6 +1221,15 @@ color: #646464;
 
 }
 
+@media screen and (max-width: 376px) {
+
+    .eligibility-title {
+
+        font-size: .9rem;
+
+    }
+}
+
 
 @media screen and (max-width: 820px) {
 .accordion-content {
@@ -1241,7 +1259,6 @@ color: #646464;
 
 .eligibility-title {
         font-family: 'Open Sans', sans-serif;
-        font-size: 1.1rem;
         text-align: center!important;
         text-transform: none;
         font-weight: 600;
@@ -1516,6 +1533,7 @@ counties.forEach((county, index) => {
     
     <div id="intro-container">
         <div id="intro-title">
+            <h1 id="intro-h1">Hot Deals - Central Florida</h1>
             <div id="intro-pic"></div>
             <div>
             <p id="intro-sub"><strong>ConcordRENTS</strong> is a national leader in providing high-quality, multifamily housing and understands the importance of a strong community and the value of giving back.<br />
