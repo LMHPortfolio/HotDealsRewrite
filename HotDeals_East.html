@@ -1491,11 +1491,6 @@ return tbody;
 const counties = document.querySelectorAll('.countyName');
 const incomeLimit = document.querySelectorAll('.eligibility-title');
 
-counties.forEach((county)=> {
-    console.log(county.innerHTML);
-})
-
-
 let incomeTableVolusia;
 let incomeTableBrevard;
 let incomeTableFlagler;
@@ -1527,14 +1522,17 @@ let incomeTableFlagler;
                     case 'Volusia County':
                         const generatedTableVolusia = generateTable(incomeTableVolusia);
                         tableContainer.appendChild(generatedTableVolusia);
+                        console.log(generatedTableVolusia);
                         break;
                     case 'Brevard County':
                         const generatedTableBrevard = generateTable(incomeTableBrevard);
                         tableContainer.appendChild(generatedTableBrevard);
+                        console.log(generatedTableBrevard);
                         break;
                     case 'Flagler County':
                         const generatedTableFlagler = generateTable(incomeTableFlagler);
                         tableContainer.appendChild(generatedTableFlagler);
+                        console.log(generatedTableFlagler);
                         break;
 
                     default:
@@ -1544,6 +1542,9 @@ let incomeTableFlagler;
             } else {
                  console.log('no .tbody-container found for', county.innerHTML);
             }
+
+
+
 }); 
 
 
