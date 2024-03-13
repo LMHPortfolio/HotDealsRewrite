@@ -31,6 +31,11 @@ section {
     margin: unset;
 }
 
+#innerpage #ctmcontentcontainer {
+
+    padding-bottom: unset;
+}
+
 #intro-container {
 
     display: flex!important;
@@ -1522,17 +1527,14 @@ let incomeTableFlagler;
                     case 'Volusia County':
                         const generatedTableVolusia = generateTable(incomeTableVolusia);
                         tableContainer.appendChild(generatedTableVolusia);
-                        console.log(generatedTableVolusia);
                         break;
                     case 'Brevard County':
                         const generatedTableBrevard = generateTable(incomeTableBrevard);
                         tableContainer.appendChild(generatedTableBrevard);
-                        console.log(generatedTableBrevard);
                         break;
                     case 'Flagler County':
                         const generatedTableFlagler = generateTable(incomeTableFlagler);
                         tableContainer.appendChild(generatedTableFlagler);
-                        console.log(generatedTableFlagler);
                         break;
 
                     default:
