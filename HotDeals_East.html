@@ -1491,13 +1491,17 @@ return tbody;
 const counties = document.querySelectorAll('.countyName');
 const incomeLimit = document.querySelectorAll('.eligibility-title');
 
+counties.forEach((county)=> {
+    console.log(county.innerHTML);
+})
+
 
 let incomeTableVolusia;
 let incomeTableBrevard;
 let incomeTableFlagler;
 
-counties.forEach((county, index) => {
-    
+ counties.forEach((county, index) => {
+
     const item = incomeLimit[index]; // Get the corresponding item from incomeLimit based on the current county index
     
     switch (true) {
@@ -1507,11 +1511,10 @@ counties.forEach((county, index) => {
             incomeTableBrevard = brevardTable[0]; 
             incomeTableFlagler = flaglerTable[0]; 
             break;
-
         default:
             
             incomeTableVolusia = volusiaTable[1];
-            incomeTableBrevard = brevardTable[1]; 
+            incomeTableBrevard = brevardTable[0]; 
             incomeTableFlagler = flaglerTable[1];
             break;
     } 
@@ -1522,15 +1525,15 @@ counties.forEach((county, index) => {
                 switch (county.innerHTML) {
 
                     case 'Volusia County':
-                        const generatedTableVolusia = generateTable(volusiaTable);
+                        const generatedTableVolusia = generateTable(incomeTableVolusia);
                         tableContainer.appendChild(generatedTableVolusia);
                         break;
                     case 'Brevard County':
-                        const generatedTableBrevard = generateTable(brevardTable);
+                        const generatedTableBrevard = generateTable(incomeTableBrevard);
                         tableContainer.appendChild(generatedTableBrevard);
                         break;
                     case 'Flagler County':
-                        const generatedTableFlagler = generateTable(flaglerTable);
+                        const generatedTableFlagler = generateTable(incomeTableFlagler);
                         tableContainer.appendChild(generatedTableFlagler);
                         break;
 
@@ -1541,7 +1544,8 @@ counties.forEach((county, index) => {
             } else {
                  console.log('no .tbody-container found for', county.innerHTML);
             }
-});
+}); 
+
 
     
 </script>
@@ -1594,6 +1598,7 @@ counties.forEach((county, index) => {
 
 
 <div class="county-dropdown-container"><label for="county-dropdown">Select Your County:</label> <select id="county-select" onchange="handleCountySelect()">
+    <option value="#">Please select</option>
     <option value="#Volusia">Volusia</option>
     <option value="#Brevard">Brevard</option>
     <option value="#Flagler">Flagler</option>
@@ -1629,7 +1634,7 @@ counties.forEach((county, index) => {
                             <!--<div class="price-item">4 Bedroom at <p>$price</p></div>-->
                         </div>
                         <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
-                        <h2 class="eligibility-title accordion-container" data-value="80" onclick="toggleAccordion('modal1')">Click HERE to View Income Restrictions</h2>
+                        <h2 class="eligibility-title accordion-container" data-value="60" onclick="toggleAccordion('modal1')">Click HERE to View Income Restrictions</h2>
                         <div class="accordion-content" id="modal1"><span class="close-btn-x" onclick="toggleAccordion('modal1')">x</span>
                         <table class="table">
                             <thead class="thead">
@@ -1645,57 +1650,6 @@ counties.forEach((county, index) => {
                         <button class="CTA-apply"><a href="https://www.wildwoodpreserveapts.com/letsgetstarted" target="_blank">Get Started</a></button>
                         <p class="date-updated"></p>
                 </div>            
-            </div>
-        </div>
-    </div>
-</div>
-<!--row/card ends here-->
-</section>
-
-
-<section class="county-section" id="Volusia">
-    <h1 class="county-title">Volusia</h1>
-<!--row/card starts here-->
-<div class="row-container">  
-    <div class="card-container">
-        <div class="card">
-            <div class="countyName">Volusia County</div>
-                <div class="image-container-wrapper">
-                    <a href="https://www.lakesideretreatat27.com/" target="_blank">
-                    <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/exterior2019-6_rev.jpg');">&nbsp;</div>
-                    </a>
-                <div class="phone-number"><img class="phone-icon" alt="phone icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/phone-solid.png">855-724-3321</div>
-            </div>
-            <div class="card-body">
-                <div class="card-title">
-                    <h2 class="property-name"><a href="https://www.lakesideretreatat27.com/" target="_blank">Lakeside Retreat at 27</a></h2>
-                    <div class="address"><img class="map-pin-icon" alt="map-pin-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/location-dot-solid.png">
-                        <a href="https://maps.app.goo.gl/ygCBjbcavwyEpJEEA">1403 Old Harbor Blvd, Leesburg, FL 34748</a></div>
-                </div>
-                <h3 class="special-pricing">Pricing Starting at:</h3>
-                        <div class="pricing-grid">
-                            <!--<div class="price-item">1 Bedroom at <p>$price</p></div>-->
-                            <div class="price-item">2 Bedroom at <p>$1,275</p></div>
-                            <div class="price-item">3 Bedroom at <p>$1,349</p></div>
-                            <div class="price-item">4 Bedroom at <p>$1,599</p></div>
-                        </div>
-                        <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
-                        <h2 class="eligibility-title accordion-container" data-value="80" onclick="toggleAccordion('modal2')">Click HERE to View Income Restrictions</h2>
-                        <div class="accordion-content" id="modal2"><span class="close-btn-x" onclick="toggleAccordion('modal2')">x</span>
-                        <table class="table">
-                            <thead class="thead">
-                                <tr class="tr">
-                                    <th class="th" scope="col">Household Size</th>
-                                    <th class="th" scope="col">Max Allowable Household Income</th>
-                                </tr>
-                            </thead>
-                        </table>
-                        <table class="tbody-container table">
-                        </table>
-                        </div>
-                        <button class="CTA-apply"><a href="https://www.lakesideretreatat27.com/letsgetstarted" target="_blank">Get Started</a></button>
-                        <p class="date-updated"></p>
-                </div>
             </div>
         </div>
     </div>
@@ -1730,8 +1684,8 @@ counties.forEach((county, index) => {
                             <!--<div class="price-item">4 Bedroom at <p>$price</p></div>-->
                         </div>
                         <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
-                        <h2 class="eligibility-title accordion-container" data-value="" onclick="toggleAccordion('modal5')"></h2>
-                        <div class="accordion-content" id="modal5"><span class="close-btn-x" onclick="toggleAccordion('modal5')">x</span>
+                        <h2 class="eligibility-title accordion-container" data-value="80" onclick="toggleAccordion('modal2')">Click HERE to View Income Restrictions</h2>
+                        <div class="accordion-content" id="modal2"><span class="close-btn-x" onclick="toggleAccordion('modal2')">x</span>
                         <table class="table">
                             <thead class="thead">
                                 <tr class="tr">
@@ -1744,6 +1698,55 @@ counties.forEach((county, index) => {
                         </table>
                         </div>
                         <button class="CTA-apply"><a href="https://www.myameliacourt.com/letsgetstarted" target="_blank">Get Started</a></button>
+                        <p class="date-updated"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--row/card ends here-->
+</section>
+<section class="county-section" id="Volusia">
+    <h1 class="county-title">Volusia</h1>
+<!--row/card starts here-->
+<div class="row-container">  
+    <div class="card-container">
+        <div class="card">
+            <div class="countyName">Volusia County</div>
+                <div class="image-container-wrapper">
+                    <a href="https://www.lakesideretreatat27.com/" target="_blank">
+                    <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/exterior2019-6_rev.jpg');">&nbsp;</div>
+                    </a>
+                <div class="phone-number"><img class="phone-icon" alt="phone icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/phone-solid.png">855-724-3321</div>
+            </div>
+            <div class="card-body">
+                <div class="card-title">
+                    <h2 class="property-name"><a href="https://www.lakesideretreatat27.com/" target="_blank">Lakeside Retreat at 27</a></h2>
+                    <div class="address"><img class="map-pin-icon" alt="map-pin-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/location-dot-solid.png">
+                        <a href="https://maps.app.goo.gl/ygCBjbcavwyEpJEEA">1403 Old Harbor Blvd, Leesburg, FL 34748</a></div>
+                </div>
+                <h3 class="special-pricing">Pricing Starting at:</h3>
+                        <div class="pricing-grid">
+                            <!--<div class="price-item">1 Bedroom at <p>$price</p></div>-->
+                            <div class="price-item">2 Bedroom at <p>$1,275</p></div>
+                            <div class="price-item">3 Bedroom at <p>$1,349</p></div>
+                            <div class="price-item">4 Bedroom at <p>$1,599</p></div>
+                        </div>
+                        <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
+                        <h2 class="eligibility-title accordion-container" data-value="80" onclick="toggleAccordion('modal3')">Click HERE to View Income Restrictions</h2>
+                        <div class="accordion-content" id="modal3"><span class="close-btn-x" onclick="toggleAccordion('modal3')">x</span>
+                        <table class="table">
+                            <thead class="thead">
+                                <tr class="tr">
+                                    <th class="th" scope="col">Household Size</th>
+                                    <th class="th" scope="col">Max Allowable Household Income</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="tbody-container table">
+                        </table>
+                        </div>
+                        <button class="CTA-apply"><a href="https://www.lakesideretreatat27.com/letsgetstarted" target="_blank">Get Started</a></button>
                         <p class="date-updated"></p>
                 </div>
             </div>
@@ -1780,8 +1783,8 @@ counties.forEach((county, index) => {
                             <!--<div class="price-item">4 Bedroom at <p>$price</p></div>-->
                         </div>
                         <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
-                        <h2 class="eligibility-title accordion-container" data-value="" onclick="toggleAccordion('modal12')"></h2>
-                        <div class="accordion-content" id="modal12"><span class="close-btn-x" onclick="toggleAccordion('modal12')">x</span>
+                        <h2 class="eligibility-title accordion-container" data-value="80" onclick="toggleAccordion('modal4')">Click HERE to View Income Restrictions</h2>
+                        <div class="accordion-content" id="modal4"><span class="close-btn-x" onclick="toggleAccordion('modal4')">x</span>
                         <table class="table">
                             <thead class="thead">
                                 <tr class="tr">
@@ -1830,8 +1833,8 @@ counties.forEach((county, index) => {
                             <!--<div class="price-item">4 Bedroom at <p>$2,100</p></div>-->
                         </div>
                         <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
-                        <h2 class="eligibility-title accordion-container" data-value="" onclick="toggleAccordion('modal16')"></h2>
-                        <div class="accordion-content" id="modal16"><span class="close-btn-x" onclick="toggleAccordion('modal16')">x</span>
+                        <h2 class="eligibility-title accordion-container" data-value="" onclick="toggleAccordion('modal5')"></h2>
+                        <div class="accordion-content" id="modal5"><span class="close-btn-x" onclick="toggleAccordion('modal5')">x</span>
                         <table class="table">
                             <thead class="thead">
                                 <tr class="tr">
@@ -1880,8 +1883,8 @@ counties.forEach((county, index) => {
                             <!--<div class="price-item">4 Bedroom at <p>$2,299</p></div>-->
                         </div>
                         <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
-                        <h2 class="eligibility-title accordion-container" data-value="80" onclick="toggleAccordion('modal18')">Click HERE to View Income Restrictions</h2>
-                        <div class="accordion-content" id="modal18"><span class="close-btn-x" onclick="toggleAccordion('modal18')">x</span>
+                        <h2 class="eligibility-title accordion-container" data-value="" onclick="toggleAccordion('modal6')"></h2>
+                        <div class="accordion-content" id="modal6"><span class="close-btn-x" onclick="toggleAccordion('modal6')">x</span>
                         <table class="table">
                             <thead class="thead">
                                 <tr class="tr">
