@@ -1,0 +1,2527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;display=swap" rel="stylesheet" />
+
+<style>
+
+body { 
+
+    font-family: 'Open Sans', sans-serif!important;
+    margin:auto!important;
+    height: 100vh!important;
+
+}
+
+section {
+
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+.container-bs3 {
+    width:unset;
+    padding: unset;
+    margin: unset;
+}
+
+#intro-container {
+
+    display: flex!important;
+    justify-content: center!important;
+    align-items: center!important;
+    max-width: 1200px!important; 
+    margin: auto!important;
+    padding: 20px!important; 
+    gap: 1.9rem!important;
+
+}
+
+#intro-h1 {
+
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif!important;
+    font-size: 2rem!important;
+    text-transform: uppercase;
+    letter-spacing: .04rem!important;
+    color: #883720!important;
+    font-weight: 800;
+    padding-bottom: 1.5rem;
+}
+
+@media screen and (max-width:820px) {
+
+        #intro-h1 {
+
+        padding-bottom: 1rem;
+    }
+
+}
+
+#intro-sub {
+
+    max-width: 1150px;
+    margin-left: 20px;
+    margin-top: 2.5rem!important;
+    font-size: 1rem!important;
+    font-weight: 400!important;
+    line-height: 1.4rem!important;
+    color: #2a2a2a!important;
+    letter-spacing: .05rem!important;
+}
+
+#intro-sub-notice {
+
+    font-size: .9rem;
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+}
+
+#intro-pic {
+
+    flex-shrink: 0!important; 
+    width: 1200px; 
+    height: 350px!important;
+    background-repeat: no-repeat!important;
+    background-size: cover!important;
+    background-position: left 60% bottom 30%!important;
+    background-image:url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/fountains%20at%20millenia_pool%20(17)_rev.jpg');
+    border-radius: 10px!important;
+    margin: auto;
+
+}
+
+
+@media screen and (max-width: 1024px) {
+
+#intro-container {
+    flex-direction: row!important;
+    
+}
+
+#intro-text {
+
+    padding-right: 40px!important; 
+}
+
+#intro-pic {
+
+    width: 100%;
+}
+}
+
+@media screen and (max-width: 900px) {
+
+#intro-container {
+    flex-direction: column!important;
+}
+
+#intro-pic {
+    
+    
+    margin-top: 0%!important;
+}
+
+
+}   
+
+@media screen and (max-width: 480px) {
+
+#intro-container {
+
+    flex-direction: column!important; 
+    text-align: center!important; 
+}
+
+#intro-text {
+
+    padding-right: 0!important; 
+    margin-bottom: 20px!important; 
+}
+
+#intro-pic {
+    
+    width: 100%!important; 
+    height: 200px!important; 
+    border-radius: 10px!important; 
+}
+}
+
+
+#nav-section-background {
+
+background-color: #ffffff!important;
+}
+
+.nav-container {
+
+display: flex!important;
+flex-direction: row!important;
+justify-content: center!important;   
+}
+
+#page-nav-h2 {
+
+text-align: center!important;
+font-family: 'Poppins', sans-serif!important;
+font-size: 1.3rem!important;
+font-weight: 300!important;
+line-height: .8rem!important;
+letter-spacing: .03rem!important;
+margin-top: 30px;
+text-transform: none!important;
+color: #444444!important;
+}
+
+#page-nav {
+
+padding: .8rem!important;
+}
+
+@media screen and (min-width: 768px) {
+
+#page-nav ul {
+  
+    font-family: 'Poppins', sans-serif!important;
+    list-style-type: none!important;
+    padding: 0!important;
+    margin: 0!important;
+    display: flex!important;
+    flex-direction: row!important;
+    flex-wrap: wrap!important;
+    justify-content: space-evenly!important;
+}
+
+#page-nav li {
+  
+    font-family: 'Poppins', sans-serif!important;
+    margin-bottom: 10px!important;
+}
+}
+  
+@media screen and (min-width: 768px) and (max-width: 965px) {
+
+#page-nav ul {
+
+    list-style-type: none!important;
+    padding: 0!important;
+    margin: 0!important;
+    flex-direction: column!important;
+    justify-content: space-evenly!important;
+}
+
+#page-nav ul {
+
+    list-style-type: none!important;
+    padding: 0!important;
+    margin: 0!important;
+}
+
+#page-nav li {
+
+    text-align: center!important;
+    margin-bottom: 30px!important;
+    
+}
+}
+
+
+@media screen and (max-width: 768px) {
+
+#page-nav ul {
+
+    list-style-type: none!important;
+    padding: 0!important;
+    margin: 0!important;
+    flex-direction: row!important;
+    justify-content: space-evenly!important;
+}
+
+#page-nav ul {
+
+    list-style-type: none!important;
+    padding: 0!important;
+    margin: 0!important;
+}
+
+#page-nav li {
+
+    text-align: center!important;
+    margin-bottom: 30px!important;
+    
+}
+}
+
+@media screen and (max-width: 640px) {
+
+#page-nav {
+
+    display: flex!important;
+    flex-direction: column!important;
+    align-items: center!important;
+    justify-content: center!important;
+}
+
+#page-nav ul {
+
+    list-style-type: none!important;
+    padding: 0!important;
+    margin: 0!important;
+}
+#page-nav li {
+
+    text-align: center!important;
+    margin-bottom: 30px!important;  
+}
+}
+
+
+@media screen and (max-width: 480px) {
+
+#page-nav {
+
+    display: flex!important;
+    flex-direction: column!important;
+    align-items: center!important;
+    justify-content: center!important;
+    margin-left: 15px;
+}
+
+#page-nav ul {
+
+    list-style-type: none!important;
+    padding: 0!important;
+    margin: 0!important;
+}
+
+#page-nav li {
+
+    text-align: center!important;
+    margin-bottom: 30px!important;
+}
+}
+
+
+#page-nav a {
+
+font-family: 'Poppins', sans-serif!important;
+color: #ffffff!important;
+text-decoration: none!important;
+font-size: .8rem!important;
+font-weight: 600!important;
+letter-spacing: .09rem;
+background-color: #883720!important;
+padding: .5rem!important;
+border-radius: 7px!important;
+margin-right: 20px!important;
+}
+
+#page-nav a:hover {
+
+background-color: #8e5a33!important;
+}
+
+
+.county-dropdown-container {
+    
+display: flex!important;
+flex-direction: row!important;
+gap: 10px!important;
+font-family: 'Poppins', sans-serif!important;
+font-weight: .02rem!important;
+font-size: 1.3rem!important;
+letter-spacing: .01rem!important;
+padding: .5rem!important;
+margin-top: 30px!important;
+margin-bottom: 30px!important;
+margin-left: 60px!important;   
+}
+
+
+.county-dropdown-container label {
+
+font-size: 1.3rem;
+font-weight: 200;
+letter-spacing: .03rem!important;
+}
+
+.county-dropdown {
+
+font-family: 'Poppins', sans-serif!important;
+padding: .5rem!important;
+background-color: rgb(156, 156, 156)!important;
+
+}
+
+.county-dropdown option {
+
+font-family: 'Poppins', sans-serif!important;
+font-weight: .02rem!important;
+font-size: 1rem!important;
+letter-spacing: .01rem!important;
+padding: .8rem!important;
+justify-content: center!important;
+background-color: rgb(232, 232, 232)!important;
+}
+ 
+#innerpage h1 { 
+
+margin-bottom: 0;
+}
+
+
+
+#featured-community-h1 {
+
+color: #ffffff!important;
+background-color: #454545;
+padding:4px;
+padding-left: 15px;
+font-family: 'Poppins', sans-serif!important;
+font-size: 1.5rem;
+font-weight: 600!important;
+text-transform: uppercase!important;
+margin-left: 28px!important;
+margin-right: 65px!important;
+
+}
+
+@media screen and (max-width: 480px) {
+
+    #featured-community-h1 {
+        font-size: 1rem;
+        margin: 1rem;
+        text-align: center;
+        
+    }
+}
+
+
+
+.county-title {
+
+color: #ffffff!important;
+background-color: #883720;
+padding:4px;
+padding-left: 15px;
+font-family: 'Poppins', sans-serif!important;
+font-size: 1.5rem!important;
+font-weight: 600!important;
+text-transform: uppercase!important;
+margin-left: 28px!important;
+margin-right: 65px!important;
+}
+
+.phone-number {
+    
+font-size: 1rem;
+letter-spacing: .05rem;
+font-weight: 600;
+padding-left: 5rem!important;
+padding-top: 1rem;
+padding-bottom: 1rem;
+
+}
+
+.phone-number::before {
+    display: none!important;
+}
+
+
+
+@media screen and (max-width:1024px) {
+    
+    .county-title {
+        width: 942px;
+
+    }
+}
+
+@media screen and (min-width:275px) and (max-width:376px) {
+
+    .county-title {
+        font-size: .95rem!important;
+        padding: 0!important;
+        text-align: center;
+        width: 100%;
+    }
+
+    .card {
+
+        padding: unset;
+        padding-left: unset;
+        
+    }
+
+   
+
+    .image-container {
+
+        max-width: 267px;
+        max-height: 320px;
+    }
+
+    .phone-number {
+
+        text-align: center;
+        padding-left: unset!important;
+
+    }
+    
+
+}
+
+@media screen and (min-width:376px) and (max-width:431px) {
+
+    .image-container {
+
+        max-width: 260px;
+        max-height: 320px;
+        
+        }
+
+    .phone-number {
+
+        text-align: center;
+        padding-left: unset!important;
+    }    
+
+    .county-title {
+
+        text-align: center;
+        width: 100%;
+    }
+    
+
+}
+
+
+.county-title-p {
+
+color: #000000!important;
+font-family: 'Open Sans', sans-serif!important;
+font-size: 1rem!important;
+text-transform: none!important;
+margin-left: 65px!important;
+
+}
+.row-container {
+
+display: flex;
+flex-direction: column;
+max-width: 1140px!important;
+margin: auto!important;
+padding: 20px!important; 
+}
+
+@media screen and (max-width: 820px) {
+
+.card-body {
+   
+    max-width: 315px;
+    margin: 10px; 
+   
+ }   
+ .county-title {
+   
+    width: 90%;
+}
+
+.card-bottom-container {
+
+    display: flex;
+    flex-direction: row;
+    
+    margin: 15px;
+}
+}
+
+@media screen and (max-width: 768px) {
+
+.row-container {
+display: flex!important;
+flex-direction: column;
+    
+}
+}
+
+
+@media screen and (max-width: 480px) {
+
+.row-container {
+
+    max-width: 1140px!important;
+    
+}
+}
+
+
+.currently-viewing {
+
+font-family: 'Poppins', sans-serif!important;
+text-align: center!important;
+}
+
+
+.card-container {
+
+max-width: 1060px;
+ 
+    
+}
+
+.card-left {
+
+    flex-direction: column;
+
+}
+  
+.property-image {
+
+width: 100%!important;
+border-radius: 10px!important;
+object-fit: cover!important;
+overflow: hidden!important;
+
+}
+
+
+.image-container {
+
+
+background-size: cover!important;
+background-position: center!important;
+width: 400px;
+height: 400px;
+border-radius: 10px!important;
+ 
+
+}
+
+.image-container-wrapper {
+
+   
+    padding-top: .7rem;
+    
+}
+
+
+
+.image-container:hover {
+
+cursor: pointer;
+
+}
+
+.card-title {
+
+   text-align: center;
+
+
+}
+
+.property-name {
+
+color: #000000!important;
+font-family: 'Open Sans', sans-serif!important;
+text-transform: uppercase;
+font-size: 1.5rem;
+font-weight: 700;
+letter-spacing: .05rem;
+
+}
+
+@media screen and (max-width: 820px) {
+
+    .property-name {
+
+        font-size: 1.1rem;
+
+    }
+
+
+}
+
+.property-name a {
+
+text-decoration: none;
+color: unset;
+}
+
+.special-pricing {
+
+    text-align: center;
+    font-size: 2rem;
+    font-style: italic;
+    color: red;
+    font-weight: 600;
+    padding: 2rem;
+
+}
+
+@media screen and (max-width: 820px) {
+
+    .special-pricing {
+
+        font-size: 1.4rem;
+
+    }
+
+
+}
+
+.pricing-grid {
+
+    display: grid;
+    max-width: 450px;
+    margin-bottom: 10px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-flow: row; 
+    place-content: center;
+    justify-content: space-evenly;
+    gap: 1rem;
+    padding:.5rem;
+
+
+}
+
+
+
+@media screen and (max-width: 820px) {
+
+.pricing-grid {
+
+    
+    font-size: 1.4rem;
+    gap: .9rem;
+
+
+}
+
+
+}
+
+.price-item {
+
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-style: italic;
+    display: inline;
+    text-align: center;
+    letter-spacing: .05rem;
+
+
+}
+.price-item p {
+
+    display: inline;
+    color: red;
+}
+
+@media screen and (max-width: 820px) {
+
+.price-item {
+
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: .03rem;
+
+}
+.date-updated {
+
+    padding-top: 20px;
+    
+}
+
+}
+
+
+
+  
+.card {
+
+display: flex;
+flex-direction: row;
+
+flex-wrap: nowrap;
+border-radius: 10px!important;
+box-shadow:  1px 5px 5px 1px #b3b2b2!important;
+background-color: #ffffff!important;
+padding: .7rem;
+
+
+
+        
+}
+
+.card:hover, 
+.card:focus {
+
+background-color: #eeeeee!important;
+
+}
+
+
+.card-body {
+   
+   display: flex;
+   flex-direction: column;
+   flex-wrap: nowrap;
+   place-items: center;
+   text-align: center!important;
+   color: #000000!important;
+   max-width: 500px;
+   padding-left: 3rem;
+   
+   
+   }
+
+@media screen and (max-width: 740px) {
+
+.card {
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+
+}
+
+
+}
+  
+@media screen and (min-width: 1024px) {
+
+    .card {
+
+        padding:.1rem;
+        padding-left: .75rem;
+    }
+
+
+    .pricing-grid {
+
+        padding:0rem;
+    }
+
+    .special-pricing {
+
+        font-size: 1.4rem;
+    }
+
+    .phone-number {
+
+        padding-top: 1rem;
+    }
+
+    .special-pricing {
+
+        font-size: 2rem;
+
+    }
+}
+
+
+.countyName {
+
+display: none;
+font-family: 'Open Sans', sans-serif!important;
+font-size: 1rem!important;
+text-transform: none!important;
+padding-left: 0.8rem;
+font-weight: 600;
+color: #000000!important;
+
+
+}
+
+.map-pin-icon {
+
+display: inline-flex;
+width: 1.5rem;
+color: #000000!important;
+padding-right: .25rem;
+
+}
+
+@media screen and (max-width: 820px){ 
+
+    .image-container {
+        width: 337px;
+        height: 375px;
+        margin: auto;
+        
+    }
+
+    .map-pin-icon {
+
+        width: 1rem;
+
+    }
+
+    .special-pricing {
+
+        font-size: 1.4rem;
+        line-height: 1.3;
+    }
+
+    .card-body {
+
+        padding-left: .5rem;
+    }
+
+   
+  
+}
+
+.phone-icon {
+
+    width: 1.5rem;
+    padding-right: .75rem;
+    text-align: center;
+
+}
+
+
+
+
+.address {
+
+    font-family: 'Open Sans', sans-serif!important;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    letter-spacing: .04rem;
+    display: inline-flex!important;
+    align-items: baseline!important;
+    text-transform: none!important; 
+    font-weight: 700;
+    color: #000000!important;
+} 
+
+.address a {
+
+text-decoration: none;
+color: unset;
+}
+
+.date-updated {
+
+font-family: 'Open Sans', sans-serif!important;     
+display: flex!important;
+
+font-size: .8rem!important;
+line-height: 1.2rem;
+justify-content: center!important;       
+color: #000000!important;
+font-style: italic;
+padding: .5rem;
+
+}
+
+img {
+
+vertical-align: baseline;
+}
+  
+.unit-details {
+
+font-family: 'Open Sans', sans-serif!important;
+display:grid!important;
+grid-template-columns: repeat(3,  1fr)!important;
+grid-auto-flow: column;
+gap: .3rem!important;
+text-align: center!important;
+align-items: center;
+justify-content: baseline!important;
+font-size: 1rem!important;
+font-weight: 600!important;
+color: #000000!important;
+padding-top: 0.3rem;
+padding-bottom: 0.3rem;
+vertical-align: baseline;
+}
+
+
+.admin-details {
+
+font-family: 'Open Sans', sans-serif!important;
+padding: .5rem!important;
+font-size: 1rem!important;
+font-weight: 600!important;
+color: #000000!important;
+}
+
+ 
+.CTA-apply {
+
+display: flex!important;
+align-items: center!important;
+justify-content: center!important;
+padding: .6rem!important;
+font-size: .9rem!important;
+font-family: 'Open Sans', sans-serif!important;
+margin: auto!important;
+border-radius: 10px!important;
+border: none!important;
+box-shadow: 1px 2px 2px 1px #cfcfcf!important;
+cursor: pointer!important;
+background-color: rgb(58, 58, 58)!important;
+color: #ffffff!important;
+
+}
+
+.CTA-apply a {
+
+color: #ffffff;
+}
+
+a {
+text-decoration: none;
+color: unset;
+
+}
+
+
+.CTA-apply:hover {
+
+background-color: #883720!important;
+}
+
+@media screen and (max-width: 820px) {
+    
+    .CTA-apply {
+
+        padding: 1rem;
+
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+.CTA-apply {
+
+    font-size: .9rem;
+
+}
+}
+
+
+.overlay {
+
+display: none!important;
+position: fixed!important;
+top: 0!important;
+left: 0!important;
+width: 100%!important;
+height: 100%!important;
+background: rgba(0, 0, 0, 0.5)!important;
+}
+
+.close-btn-x {
+
+position: absolute!important;
+top: 10px!important;
+right: 15px!important;
+cursor: pointer!important;
+font-size: 1.4rem;
+font-weight: 800;
+padding:7px;
+
+border-radius: 3px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close-btn:hover {
+background-color: #757575;
+}
+
+.table th {
+
+text-align: center;
+padding-right: .6rem;
+padding-left: .6rem;
+}
+
+.table {
+        
+text-align: center!important;
+background-color: #ffffff;
+padding: 20px;
+border-radius: 10px;
+font-family: 'Open Sans', sans-serif;
+border-spacing: 0.8rem;  
+
+}
+
+
+    
+.thead {
+font-size: 1rem;        
+text-align: center!important;
+}
+
+
+.th {
+color: #646464;
+text-align: center;
+padding-right: .6rem;
+}    
+
+.td-not-bootstrap {
+
+padding-left: 1.6rem!important;
+padding-right: 1.6rem!important;
+text-align: center!important;
+font-size: 1rem!important;
+    
+}    
+
+.tbody-container {
+font-size: 1rem;
+place-content: center!important;
+text-align: center!important;
+font-size: .9rem;
+width: 100%;
+justify-content: center!important;
+align-items: center!important;
+  
+}
+
+.td-not-bootstrap {
+
+padding-left: 1.6rem!important;
+padding-right: 1.6rem!important;
+text-align: center!important;
+}
+
+
+.eligibility-title {
+
+display: flex;
+flex-direction: row;
+font-family: 'Open Sans', sans-serif;
+font-size: 1rem;
+text-align: center;
+text-transform: none;
+font-weight: 600;
+color: #000000;
+
+
+}
+
+.eligibility-title:hover {
+
+    cursor: pointer;
+}
+
+
+.accordion-container {
+place-content: center;
+display: flex;
+flex-direction: row;
+}
+
+.accordion-button {
+
+padding-top: 10px;
+padding-bottom: 10px;
+padding-left: 50px;
+padding-right: 50px;
+border-radius: 10px;
+margin: 10px;
+background-color: #868686!important;
+color: #ffffff;
+font-size: .9rem;
+border: none!important;
+box-shadow: 1px 2px 2px 1px #cfcfcf!important; 
+cursor: pointer;   
+}
+
+.accordion-button:hover {
+background-color:#883720!important;
+
+}
+
+
+@media screen and (max-width: 480px)  {
+
+.accordion-button {
+
+    padding-left: 10px;
+    padding-right: 10px;
+
+
+}
+}
+
+
+.accordion-content {
+
+display: none;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%)!important;
+padding: 20px!important;
+background: #fff!important;
+border: 1px solid #ccc!important;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)!important;
+z-index: 1!important;
+border-radius: 10px!important;
+
+
+}
+
+.accordion-content.active {
+display: block;
+text-align: center;
+
+
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 768px ){
+
+.accordion-content {
+
+    position: relative;
+    top: auto;
+    left: 50%!important;
+    transform: translate(-50%, -50%)!important;
+    max-width: 75vh!important;
+    max-height: 75vh!important;
+    min-width: 50vh!important;
+    min-height: 50vh!important;
+    
+}
+}
+
+
+@media screen and (max-width: 480px) {
+
+.accordion-content {
+
+    padding: 10px;
+    max-width: 47vh;
+    border-spacing: .5rem;
+}
+
+.eligibility-title {
+
+font-family: 'Open Sans', sans-serif;
+font-size: 1rem;
+text-align: center;
+text-transform: none;
+font-weight: 700;
+color: #646464;
+
+}    
+
+}
+
+@media screen and (max-width: 376px) {
+
+    .eligibility-title {
+
+        font-size: .9rem;
+
+    }
+}
+
+
+@media screen and (max-width: 820px) {
+.accordion-content {
+   
+    position: absolute;
+    top: auto;
+    left: 50%!important;
+    transform: translate(-50%, -50%)!important;
+   
+   
+ }   
+
+
+.table {
+       
+       max-height: 75vh;
+       max-width: 75vh;
+        text-align: center!important;
+        background-color: #ffffff;
+        
+        border-radius: 10px;
+        font-family: 'Open Sans', sans-serif;
+        border-spacing: 1rem;
+        
+        
+}
+
+.eligibility-title {
+        font-family: 'Open Sans', sans-serif;
+        text-align: center!important;
+        text-transform: none;
+        font-weight: 600;
+        color: #646464;
+        padding: .2rem;
+
+    }
+
+
+    
+.thead {
+        font-size: 1rem;       
+        text-align: center!important;
+    }
+    
+    
+.th {
+
+        padding-right: .6rem;
+        color: #646464;
+       text-align: center;
+    
+    }
+
+.tr {
+      
+        font-size: 1rem;
+
+    }
+    
+ .tbody {
+
+       
+       place-content: center!important;
+        text-align: center!important;
+        font-size: .9rem;
+        width: 100%;
+        justify-content: center!important;
+        align-items: center!important; 
+        
+    }
+
+    .tbody-container {
+
+        place-content: center!important;
+        text-align: center!important;
+        font-size: .9rem;
+        width: 100%;
+        justify-content: center!important;
+        align-items: center!important;
+
+    }
+    
+    .td-not-bootstrap {
+        
+        
+        padding-left: 1.6rem!important;
+        padding-right: 1.6rem!important;
+        text-align: center!important;
+        font-size: 1rem!important;
+         
+    }
+
+
+}
+
+@media screen and (max-width: 767px) {
+
+label {
+
+    margin: 0!important;
+    font-size: 1rem;
+    font-weight: 400;
+}
+}
+
+
+</style>
+
+<script>
+
+
+    function toggleAccordion(accordionId) {
+        const accordionContent = document.getElementById(accordionId);
+        accordionContent.classList.toggle('active');
+    
+        const allAccordions = document.querySelectorAll('.accordion-content');
+        allAccordions.forEach((accordion) => {
+            if (accordion.id !== accordionId) {
+                accordion.classList.remove('active');
+            }
+        });
+    }
+
+    function handleCountySelect () {
+        const selection = document.getElementById('county-select');
+        location = selection.value;  
+    }    
+    
+</script>
+
+<script type="module" defer>
+
+/*Below is where you would update the values for eligibility tables. You only need to update the value in the income column and not any of the functions below */
+
+ 
+const centralTable = [ 
+
+//1st table contains values for 60% income restriction for Central counties (Lake, Orange, Osceola, Seminole):
+    
+    [
+        { 'householdSize': '1', 'income': '$36,900' },
+        { 'householdSize': '2', 'income': '$42,180' },
+        { 'householdSize': '3', 'income': '$41,820' },
+        { 'householdSize': '4', 'income': '$47,460' },
+        { 'householdSize': '5', 'income': '$52,680' },
+        { 'householdSize': '6', 'income': '$56,940' },
+        { 'householdSize': '7', 'income': '$65,340' },
+        { 'householdSize': '8', 'income': '$69,540' },
+    ],
+    //2nd table contains values for 80% income restriction for Central counties (Lake, Orange, Osceola, Seminole):
+    [
+        { 'householdSize': '1', 'income': '$49,200' },
+        { 'householdSize': '2', 'income': '$56,240' },
+        { 'householdSize': '3', 'income': '$63,280' },
+        { 'householdSize': '4', 'income': '$70,240' },
+        { 'householdSize': '5', 'income': '$75,920' },
+        { 'householdSize': '6', 'income': '$81,520' },
+        { 'householdSize': '7', 'income': '$87,120' },
+        { 'householdSize': '8', 'income': '$92,720' },
+    ]
+];
+
+const sumterTable = [
+
+//1st table contains values for 60% income restriction for Sumter county:
+
+    [
+        { 'householdSize': '1', 'income': '$33,480' },
+        { 'householdSize': '2', 'income': '$38,280' },
+        { 'householdSize': '3', 'income': '$43,080' },
+        { 'householdSize': '4', 'income': '$47,820' },
+        { 'householdSize': '5', 'income': '$51,660' },
+        { 'householdSize': '6', 'income': '$55,500' },
+        { 'householdSize': '7', 'income': '$59,340' },
+        { 'householdSize': '8', 'income': '$63,130' }, 
+    ],
+    //2nd table contains values for 80% income restriction for Sumter county:
+
+    [
+
+        { 'householdSize': '1', 'income': '$44,640' },
+        { 'householdSize': '2', 'income': '$51,040' },
+        { 'householdSize': '3', 'income': '$57,440' },
+        { 'householdSize': '4', 'income': '$63,760' },
+        { 'householdSize': '5', 'income': '$68,880' },
+        { 'householdSize': '6', 'income': '$74,000' },
+        { 'householdSize': '7', 'income': '$79,120' },
+        { 'householdSize': '8', 'income': '$84,240' },
+
+
+    ]
+];
+    
+   
+//Table element generator:
+    
+function generateTable(tableData) {
+
+const tbody = document.createElement('tbody');
+tbody.classList.add('tbody');
+
+const tableRows = tableData.map(({ householdSize, income }) => {
+    const row = document.createElement('tr');
+     row.classList.add('tr');
+    
+    const cell1 = document.createElement('td');
+     cell1.classList.add('td-not-bootstrap'); 
+    cell1.innerHTML = householdSize;
+    row.appendChild(cell1);
+
+    const cell2 = document.createElement('td');
+   cell2.classList.add('td-not-bootstrap');
+    cell2.innerHTML = income;
+    row.appendChild(cell2);
+
+    return row;
+});
+
+tableRows.forEach((tableRow) => {
+    tbody.appendChild(tableRow);
+});
+
+return tbody;
+}
+    
+    
+//Table data selected based on the county specified. County name is CASE SENSITIVE and must include the word County:
+//This section now checks for which county was named and whether affordable has been specified on the ".elibility-title h2" in the "data-value = [60 or 80]" property.
+//If it's not 60 or 80%, leave ".elibility-title h2" data-value empty like this = "".
+
+const counties = document.querySelectorAll('.countyName');
+const incomeLimit = document.querySelectorAll('.eligibility-title');
+
+let incomeTableCentral;
+let incomeTableSumter;
+
+counties.forEach((county, index) => {
+    
+    const item = incomeLimit[index]; // Get the corresponding item from incomeLimit based on the current county index
+    
+    switch (true) {
+        case item.dataset.value === "60":
+            
+            incomeTableCentral = centralTable[0];
+            incomeTableSumter = sumterTable[0]; 
+            break;
+        default:
+            
+            incomeTableCentral = centralTable[1];
+            incomeTableSumter = sumterTable[1];
+            break;
+    } 
+
+    const tableContainer = county.parentElement.querySelector('.tbody-container'); //check that table-container exists
+
+    if(tableContainer) {
+                switch (county.innerHTML) {
+
+                    case 'Lake County':
+                    case 'Orange County':
+                    case 'Osceola County':
+                    case 'Seminole County':
+                        const generatedTableCentral = generateTable(incomeTableCentral);
+                        tableContainer.appendChild(generatedTableCentral);
+                        break;
+
+                    case 'Sumter County':
+                        const generatedTableSumter = generateTable(incomeTableSumter);
+                        tableContainer.appendChild(generatedTableSumter);
+                        break;
+
+                    default:
+                        console.log('no table match found');
+                        break;
+                }
+            } else {
+                 console.log('no .tbody-container found for', county.innerHTML);
+            }
+});
+
+    
+</script>
+    
+<script type="module">
+        
+    /*UPDATES THE DATE ON ALL CARDS BY UPDATING THE VALUE OF CONST DATE = "" BELOW. BE SURE TO LEAVE QUOTATION MARKS  */
+    
+    const date = "3/12/24";
+    
+    /*NO NEED TO ALTER THE BELOW FUNCTION*/
+    const updatedDates = document.querySelectorAll('.date-updated');
+    
+    updatedDates.forEach((item, index) => 
+        item.innerHTML = `Updated:${date}. Availability subject to change. See website for pricing details.`);
+        
+    
+</script>
+
+</head>
+
+<body>
+    
+    <div id="intro-container">
+        <div id="intro-title">
+            <h1 id="intro-h1">Hot Deals - Central Florida</h1>
+            <div id="intro-pic"></div>
+            <div>
+            <p id="intro-sub"><strong>ConcordRENTS</strong> is a national leader in providing high-quality, multifamily housing and understands the importance of a strong community and the value of giving back.<br />
+            <br>Below are links to our <strong>current</strong> Other Availability Housing Inventory around Florida.
+            <strong>As part of the application process, applicants must submit the verification documentation in a timely manner,
+                as the first approved and full deposit paid applicant will have priority of the available apartment home.</strong><br />
+            <br>This housing inventory will move quickly. <strong>Apply today</strong> and turn this opportunity into a <strong>home!</strong></p>
+            <p id="intro-sub-notice">Pricing based on eligibility. Restrictions apply. Please visit community websites for more details on pricing and specials.</p>
+        </div>
+        <div id="nav-section-background">
+        <h2 id="page-nav-h2">Choose Your Region:</h2>
+        <div class="nav-container">
+            <nav id="page-nav">
+                <ul>
+                    <li><a href="https://www.concordrents.com/hotdeals-eastflorida.aspx">East Florida</a></li>
+                    <li><a href="https://www.concordrents.com/hotdeals-centralflorida.aspx">Central Florida</a></li>
+                    <li><a href="https://www.concordrents.com/hotdeals-westflorida1.aspx">West Florida</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<div class="county-dropdown-container"><label for="county-dropdown">Select Your County:</label> <select id="county-select" onchange="handleCountySelect()">
+    <option value="#Orange">Orange</option>
+    <option value="#Osceola">Osceola</option>
+    <option value="#Seminole">Seminole</option>
+    <option value="#Lake">Lake</option>
+    <option value="#Sumter">Sumter</option> 
+</select>
+</div>
+
+<section class="county-section featured-community" id="featured-community">
+<h1 id="featured-community-h1" class="county-title">Featured Communities</h1>
+<!--row/card starts here-->
+<div class="row-container">  
+    <div class="card-container">
+        <div class="card">
+            <div class="countyName">Sumter County</div>
+            <div class="image-container-wrapper">
+                <a href="https://www.wildwoodpreserveapts.com/" target="_blank">
+                <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_365/s3/2/82930/wildwood%20preserve_030424.jpg');">&nbsp;</div>
+                </a>
+                <div class="phone-number"><img class="phone-icon" alt="phone icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/phone-solid.png">833-346-0795</div>
+            </div>
+            <div class="card-body">
+                <div class="card-title">
+                    <h2 class="property-name"><a href="https://www.wildwoodpreserveapts.com/" target="_blank">Wildwood Preserve Apartments</a></h2>
+                    <div class="address"><img class="map-pin-icon" alt="map-pin-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/location-dot-solid.png">
+                        <a href="https://maps.app.goo.gl/3TE6JzWDvHiHWarNA">7011 Homestead Loop, Wildwood, FL 34785</a></div>
+                </div>
+                    <h3 class="special-pricing">Special Limited Time Pricing!</h3>
+                        <div class="pricing-grid">
+                            <!--<div class="price-item">1 Bedroom at <p>$price</p></div>-->
+                            <div class="price-item">2 Bedroom at <p>$1,449</p></div>
+                            <div class="price-item">3 Bedroom at <p>$1,649</p></div>
+                            <!--<div class="price-item">4 Bedroom at <p>$price</p></div>-->
+                        </div>
+                        <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
+                        <h2 class="eligibility-title accordion-container" data-value="80" onclick="toggleAccordion('modal1')">Click HERE to View Income Restrictions</h2>
+                        <div class="accordion-content" id="modal1"><span class="close-btn-x" onclick="toggleAccordion('modal1')">x</span>
+                        <table class="table">
+                            <thead class="thead">
+                                <tr class="tr">
+                                    <th class="th" scope="col">Household Size</th>
+                                    <th class="th" scope="col">Max Allowable Household Income</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="tbody-container table">
+                        </table>
+                        </div>
+                        <button class="CTA-apply"><a href="https://www.wildwoodpreserveapts.com/letsgetstarted" target="_blank">Get Started</a></button>
+                        <p class="date-updated"></p>
+                </div>            
+            </div>
+        </div>
+    </div>
+</div>
+<!--row/card ends here-->
+</section>
+
+
+<section class="county-section" id="Lake">
+    <h1 class="county-title">Lake County</h1>
+<!--row/card starts here-->
+<div class="row-container">  
+    <div class="card-container">
+        <div class="card">
+            <div class="countyName">Lake County</div>
+                <div class="image-container-wrapper">
+                    <a href="https://www.lakesideretreatat27.com/" target="_blank">
+                    <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/exterior2019-6_rev.jpg');">&nbsp;</div>
+                    </a>
+                <div class="phone-number"><img class="phone-icon" alt="phone icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/phone-solid.png">855-724-3321</div>
+            </div>
+            <div class="card-body">
+                <div class="card-title">
+                    <h2 class="property-name"><a href="https://www.lakesideretreatat27.com/" target="_blank">Lakeside Retreat at 27</a></h2>
+                    <div class="address"><img class="map-pin-icon" alt="map-pin-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/location-dot-solid.png">
+                        <a href="https://maps.app.goo.gl/ygCBjbcavwyEpJEEA">1403 Old Harbor Blvd, Leesburg, FL 34748</a></div>
+                </div>
+                <h3 class="special-pricing">Pricing Starting at:</h3>
+                        <div class="pricing-grid">
+                            <!--<div class="price-item">1 Bedroom at <p>$price</p></div>-->
+                            <div class="price-item">2 Bedroom at <p>$1,275</p></div>
+                            <div class="price-item">3 Bedroom at <p>$1,349</p></div>
+                            <div class="price-item">4 Bedroom at <p>$1,599</p></div>
+                        </div>
+                        <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
+                        <h2 class="eligibility-title accordion-container" data-value="80" onclick="toggleAccordion('modal2')">Click HERE to View Income Restrictions</h2>
+                        <div class="accordion-content" id="modal2"><span class="close-btn-x" onclick="toggleAccordion('modal2')">x</span>
+                        <table class="table">
+                            <thead class="thead">
+                                <tr class="tr">
+                                    <th class="th" scope="col">Household Size</th>
+                                    <th class="th" scope="col">Max Allowable Household Income</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="tbody-container table">
+                        </table>
+                        </div>
+                        <button class="CTA-apply"><a href="https://www.lakesideretreatat27.com/letsgetstarted" target="_blank">Get Started</a></button>
+                        <p class="date-updated"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--row/card ends here-->
+<!--row/card starts here-->
+<div class="row-container">  
+    <div class="card-container">
+        <div class="card">
+            <div class="countyName">Lake County</div>
+                <div class="image-container-wrapper">
+                    <a href="https://www.eudorareserveapts.com/" target="_blank">
+                    <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/2796-spring-orchard-avenue--mt-dora---fl-32757---05.jpg');">&nbsp;</div>
+                    </a>
+                <div class="phone-number"><img class="phone-icon" alt="phone icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/phone-solid.png">833-265-0209</div>
+            </div>
+            <div class="card-body">
+                <div class="card-title">
+                    <h2 class="property-name"><a href="https://www.eudorareserveapts.com/" target="_blank">Eudora Reserve Apartments</a></h2>
+                    <div class="address"><img class="map-pin-icon" alt="map-pin-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/location-dot-solid.png">
+                        <a href="https://maps.app.goo.gl/JtC8FYgKXMCWWCPP9">2796 Spring Orchard Ave, Mt. Dora, FL 32757</a></div>
+                </div>
+                <h3 class="special-pricing">Pricing Starting at:</h3>
+                        <div class="pricing-grid">
+                            <!--<div class="price-item">1 Bedroom at <p>$price</p></div>-->
+                            <div class="price-item">2 Bedroom at <p>$1,699</p></div>
+                            <!--<div class="price-item">3 Bedroom at <p>$1,349</p></div>-->
+                            <!--<div class="price-item">4 Bedroom at <p>$1,599</p></div>-->
+                        </div>
+                        <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
+                        <h2 class="eligibility-title accordion-container" data-value="" onclick="toggleAccordion('modal3')"></h2>
+                        <div class="accordion-content" id="modal3"><span class="close-btn-x" onclick="toggleAccordion('modal3')">x</span>
+                        <table class="table">
+                            <thead class="thead">
+                                <tr class="tr">
+                                    <th class="th" scope="col">Household Size</th>
+                                    <th class="th" scope="col">Max Allowable Household Income</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="tbody-container table">
+                        </table>
+                        </div>
+                        <button class="CTA-apply"><a href="https://www.eudorareserveapts.com/letsgetstarted" target="_blank">Get Started</a></button>
+                        <p class="date-updated"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--row/card ends here-->
+<!--row/card starts here-->
+<div class="row-container">  
+    <div class="card-container">
+        <div class="card">
+            <div class="countyName">Lake County</div>
+                <div class="image-container-wrapper">
+                    <a href="https://www.springlakecoveapts.com/" target="_blank">
+                    <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/spring%20lake%20cove_exterior%20(4).jpg');">&nbsp;</div>
+                    </a>
+                <div class="phone-number"><img class="phone-icon" alt="phone icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/phone-solid.png">855-324-2677</div>
+            </div>
+            <div class="card-body">
+                <div class="card-title">
+                    <h2 class="property-name"><a href="https://www.springlakecoveapts.com/" target="_blank">Spring Lake Cove Apartments</a></h2>
+                    <div class="address"><img class="map-pin-icon" alt="map-pin-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/location-dot-solid.png">
+                        <a href="https://maps.app.goo.gl/5Un9ULR16eAFuLqF9">1508 Spring Lake Rd, Fruitland Park, FL 34731</a></div>
+                </div>
+                <h3 class="special-pricing">Pricing Starting at:</h3>
+                        <div class="pricing-grid">
+                            <!--<div class="price-item">1 Bedroom at <p>$price</p></div>-->
+                            <div class="price-item">2 Bedroom at <p>$1,349</p></div>
+                            <!--<div class="price-item">3 Bedroom at <p>$1,349</p></div>-->
+                            <!--<div class="price-item">4 Bedroom at <p>$1,599</p></div>-->
+                        </div>
+                        <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
+                        <h2 class="eligibility-title accordion-container" data-value="" onclick="toggleAccordion('modal4')"></h2>
+                        <div class="accordion-content" id="modal4"><span class="close-btn-x" onclick="toggleAccordion('modal4')">x</span>
+                        <table class="table">
+                            <thead class="thead">
+                                <tr class="tr">
+                                    <th class="th" scope="col">Household Size</th>
+                                    <th class="th" scope="col">Max Allowable Household Income</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="tbody-container table">
+                        </table>
+                        </div>
+                        <button class="CTA-apply"><a href="https://www.springlakecoveapts.com/letsgetstarted" target="_blank">Get Started</a></button>
+                        <p class="date-updated"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--row/card ends here-->
+<!--row/card starts here-->
+<div class="row-container">  
+    <div class="card-container">
+        <div class="card">
+            <div class="countyName">Lake County</div>
+                <div class="image-container-wrapper">
+                    <a href="https://www.clubateustis.com/" target="_blank">
+                    <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_365/s3/2/82930/club%20at%20eustis_030524.jpg');">&nbsp;</div>
+                    </a>
+                <div class="phone-number"><img class="phone-icon" alt="phone icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/phone-solid.png">844-298-1079</div>
+            </div>
+            <div class="card-body">
+                <div class="card-title">
+                    <h2 class="property-name"><a href="https://www.clubateustis.com/" target="_blank">Club at Eustis Apartments</a></h2>
+                    <div class="address"><img class="map-pin-icon" alt="map-pin-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/location-dot-solid.png">
+                        <a href="https://maps.app.goo.gl/SgwQC4FKQ5JjSeAT6">2750 David Walker Dr, Eustis, FL 32726</a></div>
+                </div>
+                <h3 class="special-pricing">Special Limited Time Pricing!</h3>
+                        <div class="pricing-grid">
+                            <!--<div class="price-item">1 Bedroom at <p>$price</p></div>-->
+                            <!--<div class="price-item">2 Bedroom at <p>$1,349</p></div>-->
+                            <div class="price-item">3 Bedroom at <p>$1,924</p></div>
+                            <!--<div class="price-item">4 Bedroom at <p>$1,599</p></div>-->
+                        </div>
+                        <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
+                        <h2 class="eligibility-title accordion-container" data-value="" onclick="toggleAccordion('modal4')"></h2>
+                        <div class="accordion-content" id="modal4"><span class="close-btn-x" onclick="toggleAccordion('modal4')">x</span>
+                        <table class="table">
+                            <thead class="thead">
+                                <tr class="tr">
+                                    <th class="th" scope="col">Household Size</th>
+                                    <th class="th" scope="col">Max Allowable Household Income</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="tbody-container table">
+                        </table>
+                        </div>
+                        <button class="CTA-apply"><a href="https://www.clubateustis.com/letsgetstarted" target="_blank">Get Started</a></button>
+                        <p class="date-updated"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--row/card ends here-->
+</section>
+
+<section class="county-section" id="Orange">
+    <h1 class="county-title">Orange County</h1>
+    <!--row/card starts here-->
+<div class="row-container">  
+    <div class="card-container">
+        <div class="card">
+            <div class="countyName">Orange County</div>
+                <div class="image-container-wrapper">
+                    <a href="https://www.myameliacourt.com/" target="_blank">
+                    <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/x_0,y_0,w_1250,h_1250,c_crop/q_auto,f_auto,c_limit,w_365/s3/2/82930/amelia%20court_030724.jpg');">&nbsp;</div>
+                    </a>
+                <div class="phone-number"><img class="phone-icon" alt="phone icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/phone-solid.png">833-659-4802</div>
+            </div>
+            <div class="card-body">
+                <div class="card-title">
+                    <h2 class="property-name"><a href="https://www.myameliacourt.com/" target="_blank">Amelia Court at Creative Village</a></h2>
+                    <div class="address"><img class="map-pin-icon" alt="map-pin-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/location-dot-solid.png">
+                        <a href="https://maps.app.goo.gl/9TXoz3fTsgcsQzkd9">659 W Amelia St, Orlando, FL 32801</a></div>
+                </div>
+                <h3 class="special-pricing">Special Limited Time Pricing!</h3>
+                        <div class="pricing-grid">
+                            <div class="price-item">1 Bedroom at <p>$1,379</p></div>
+                            <!--<div class="price-item">2 Bedroom at <p>$price</p></div>-->
+                            <div class="price-item">3 Bedroom at <p>$2,249</p></div>
+                            <!--<div class="price-item">4 Bedroom at <p>$price</p></div>-->
+                        </div>
+                        <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
+                        <h2 class="eligibility-title accordion-container" data-value="" onclick="toggleAccordion('modal5')"></h2>
+                        <div class="accordion-content" id="modal5"><span class="close-btn-x" onclick="toggleAccordion('modal5')">x</span>
+                        <table class="table">
+                            <thead class="thead">
+                                <tr class="tr">
+                                    <th class="th" scope="col">Household Size</th>
+                                    <th class="th" scope="col">Max Allowable Household Income</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="tbody-container table">
+                        </table>
+                        </div>
+                        <button class="CTA-apply"><a href="https://www.myameliacourt.com/letsgetstarted" target="_blank">Get Started</a></button>
+                        <p class="date-updated"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--row/card ends here-->
+<!--row/card starts here-->
+<div class="row-container">  
+    <div class="card-container">
+        <div class="card">
+            <div class="countyName">Orange County</div>
+                <div class="image-container-wrapper">
+                    <a href="https://www.retreatatvalencia.com/" target="_blank">
+                    <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/retreat%20at%20valencia_aerial%20(1).jpg');">&nbsp;</div>
+                    </a>
+                <div class="phone-number"><img class="phone-icon" alt="phone icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/phone-solid.png">877-214-3617</div>
+            </div>
+            <div class="card-body">
+                <div class="card-title">
+                    <h2 class="property-name"><a href="https://www.retreatatvalencia.com/" target="_blank">Retreat at Valencia Apartments</a></h2>
+                    <div class="address"><img class="map-pin-icon" alt="map-pin-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/location-dot-solid.png">
+                        <a href="https://maps.app.goo.gl/T7ADb5jJ4pwfwrZ4A">8413 Valencia Village Ln, Orlando, FL 32825</a></div>
+                </div>
+                <h3 class="special-pricing">Pricing Starting at:</h3>
+                        <div class="pricing-grid">
+                            <div class="price-item">1 Bedroom at <p>$1,209</p></div>
+                            <div class="price-item">2 Bedroom at <p>$1,435</p></div>
+                            <div class="price-item">3 Bedroom at <p>$1,709</p></div>
+                            <!--<div class="price-item">4 Bedroom at <p>$price</p></div>-->
+                        </div>
+                        <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
+                        <h2 class="eligibility-title accordion-container" data-value="80" onclick="toggleAccordion('modal6')">Click HERE to View Income Restrictions</h2>
+                        <div class="accordion-content" id="modal6"><span class="close-btn-x" onclick="toggleAccordion('modal6')">x</span>
+                        <table class="table">
+                            <thead class="thead">
+                                <tr class="tr">
+                                    <th class="th" scope="col">Household Size</th>
+                                    <th class="th" scope="col">Max Allowable Household Income</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="tbody-container table">
+                        </table>
+                        </div>
+                        <button class="CTA-apply"><a href="https://www.retreatatvalencia.com/letsgetstarted" target="_blank">Get Started</a></button>
+                        <p class="date-updated"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--row/card ends here-->
+<!--row/card starts here-->
+<div class="row-container">  
+    <div class="card-container">
+        <div class="card">
+            <div class="countyName">Orange County</div>
+                <div class="image-container-wrapper">
+                    <a href="https://www.myvillageparkapts.com/" target="_blank">
+                    <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/village%20park%20senior_031124.jpg');">&nbsp;</div>
+                    </a>
+                <div class="phone-number"><img class="phone-icon" alt="phone icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/phone-solid.png">844-402-8666</div>
+            </div>
+            <div class="card-body">
+                <div class="card-title">
+                    <h2 class="property-name"><a href="https://www.myvillageparkapts.com/" target="_blank">Village Park Senior Living</a></h2>
+                    <div class="address"><img class="map-pin-icon" alt="map-pin-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/location-dot-solid.png">
+                        <a href="https://maps.app.goo.gl/ccz2eEzuCtM6bR9s5">550 N Denning Dr, Winter Park, FL 32789</a></div>
+                </div>
+                <h3 class="special-pricing">Special Limited Time Pricing!</h3>
+                        <div class="pricing-grid">
+                            <!--<div class="price-item">1 Bedroom at <p>$1,209</p></div>-->
+                            <div class="price-item">2 Bedroom at <p>$1,899</p></div>
+                            <!--<div class="price-item">3 Bedroom at <p>$1,709</p></div>-->
+                            <!--<div class="price-item">4 Bedroom at <p>$price</p></div>-->
+                        </div>
+                        <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
+                        <h2 class="eligibility-title accordion-container" data-value="" onclick="toggleAccordion('modal7')"></h2>
+                        <div class="accordion-content" id="modal7"><span class="close-btn-x" onclick="toggleAccordion('modal7')">x</span>
+                        <table class="table">
+                            <thead class="thead">
+                                <tr class="tr">
+                                    <th class="th" scope="col">Household Size</th>
+                                    <th class="th" scope="col">Max Allowable Household Income</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="tbody-container table">
+                        </table>
+                        </div>
+                        <button class="CTA-apply"><a href="https://www.retreatatvalencia.com/letsgetstarted" target="_blank">Get Started</a></button>
+                        <p class="date-updated"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--row/card ends here-->
+<!--row/card starts here-->
+<div class="row-container">  
+    <div class="card-container">
+        <div class="card">
+            <div class="countyName">Orange County</div>
+                <div class="image-container-wrapper">
+                    <a href="https://www.leevista.com/" target="_blank">
+                    <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_365/s3/2/82930/lee%20vista_030824.jpg');">&nbsp;</div>
+                    </a>
+                <div class="phone-number"><img class="phone-icon" alt="phone icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/phone-solid.png">855-521-8896</div>
+            </div>
+            <div class="card-body">
+                <div class="card-title">
+                    <h2 class="property-name"><a href="https://www.leevista.com/" target="_blank">Lee Vista Apartments</a></h2>
+                    <div class="address"><img class="map-pin-icon" alt="map-pin-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/location-dot-solid.png">
+                        <a href="https://maps.app.goo.gl/ebPPTXK2WXVZLaFk6">5903 Lee Vista Blvd, Orlando, FL 32822</a></div>
+                </div>
+                <h3 class="special-pricing">Special Limited Time Pricing!</h3>
+                        <div class="pricing-grid">
+                            <!--<div class="price-item">1 Bedroom at <p>$1,209</p></div>-->
+                            <!--<div class="price-item">2 Bedroom at <p>$1,899</p></div>-->
+                            <!--<div class="price-item">3 Bedroom at <p>$1,709</p></div>-->
+                            <div class="price-item">4 Bedroom at <p>$1,849</p></div>
+                        </div>
+                        <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
+                        <h2 class="eligibility-title accordion-container" data-value="60" onclick="toggleAccordion('modal8')">Click HERE to View Income Restrictions</h2>
+                        <div class="accordion-content" id="modal8"><span class="close-btn-x" onclick="toggleAccordion('modal8')">x</span>
+                        <table class="table">
+                            <thead class="thead">
+                                <tr class="tr">
+                                    <th class="th" scope="col">Household Size</th>
+                                    <th class="th" scope="col">Max Allowable Household Income</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="tbody-container table">
+                        </table>
+                        </div>
+                        <button class="CTA-apply"><a href="https://www.leevista.com/letsgetstarted" target="_blank">Get Started</a></button>
+                        <p class="date-updated"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--row/card ends here-->
+<!--row/card starts here-->
+<div class="row-container">  
+    <div class="card-container">
+        <div class="card">
+            <div class="countyName">Orange County</div>
+                <div class="image-container-wrapper">
+                    <a href="https://www.fountainsatmillenia.com/" target="_blank">
+                    <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/fountainsatmillenia_030124.jpg');">&nbsp;</div>
+                    </a>
+                <div class="phone-number"><img class="phone-icon" alt="phone icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/phone-solid.png">855-221-1968</div>
+            </div>
+            <div class="card-body">
+                <div class="card-title">
+                    <h2 class="property-name"><a href="https://www.fountainsatmillenia.com/" target="_blank">Fountains at Millenia</a></h2>
+                    <div class="address"><img class="map-pin-icon" alt="map-pin-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/location-dot-solid.png">
+                        <a href="https://maps.app.goo.gl/e2F5zqELoRwTrPDe8">5316 Millenia Blvd, Orlando, FL 32839</a></div>
+                </div>
+                <h3 class="special-pricing">Special Limited Time Pricing!</h3>
+                        <div class="pricing-grid">
+                            <!--<div class="price-item">1 Bedroom at <p>$1,209</p></div>-->
+                            <!--<div class="price-item">2 Bedroom at <p>$1,899</p></div>-->
+                            <div class="price-item">3 Bedroom at <p>$1,789</p></div>
+                            <!--<div class="price-item">4 Bedroom at <p>$1,849</p></div>-->
+                        </div>
+                        <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
+                        <h2 class="eligibility-title accordion-container" data-value="60" onclick="toggleAccordion('modal9')">Click HERE to View Income Restrictions</h2>
+                        <div class="accordion-content" id="modal9"><span class="close-btn-x" onclick="toggleAccordion('modal9')">x</span>
+                        <table class="table">
+                            <thead class="thead">
+                                <tr class="tr">
+                                    <th class="th" scope="col">Household Size</th>
+                                    <th class="th" scope="col">Max Allowable Household Income</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="tbody-container table">
+                        </table>
+                        </div>
+                        <button class="CTA-apply"><a href="https://www.fountainsatmillenia.com/letsgetstarted" target="_blank">Get Started</a></button>
+                        <p class="date-updated"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--row/card ends here-->
+<!--row/card starts here-->
+<div class="row-container">  
+    <div class="card-container">
+        <div class="card">
+            <div class="countyName">Orange County</div>
+                <div class="image-container-wrapper">
+                    <a href="https://www.thevillagesonmillenia.com/" target="_blank">
+                    <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/villages%20on%20millenia_aerial%20(36)_rev.jpg');">&nbsp;</div>
+                    </a>
+                <div class="phone-number"><img class="phone-icon" alt="phone icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/phone-solid.png">844-608-8491</div>
+            </div>
+            <div class="card-body">
+                <div class="card-title">
+                    <h2 class="property-name"><a href="https://www.thevillagesonmillenia.com/" target="_blank">The Villages on Millenia</a></h2>
+                    <div class="address"><img class="map-pin-icon" alt="map-pin-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/location-dot-solid.png">
+                        <a href="https://maps.app.goo.gl/hGA8ymbnbderBshY8">5000 Millenia Blvd, Orlando, FL 32839</a></div>
+                </div>
+                <h3 class="special-pricing">Pricing Starting at:</h3>
+                        <div class="pricing-grid">
+                            <div class="price-item">1 Bedroom at <p>$1,325</p></div>
+                            <!--<div class="price-item">2 Bedroom at <p>$1,899</p></div>-->
+                            <!--<div class="price-item">3 Bedroom at <p>$1,789</p></div>-->
+                            <!--<div class="price-item">4 Bedroom at <p>$1,849</p></div>-->
+                        </div>
+                        <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
+                        <h2 class="eligibility-title accordion-container" data-value="" onclick="toggleAccordion('modal10')"></h2>
+                        <div class="accordion-content" id="modal10"><span class="close-btn-x" onclick="toggleAccordion('modal10')">x</span>
+                        <table class="table">
+                            <thead class="thead">
+                                <tr class="tr">
+                                    <th class="th" scope="col">Household Size</th>
+                                    <th class="th" scope="col">Max Allowable Household Income</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="tbody-container table">
+                        </table>
+                        </div>
+                        <button class="CTA-apply"><a href="https://www.thevillagesonmillenia.com/letsgetstarted" target="_blank">Get Started</a></button>
+                        <p class="date-updated"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--row/card ends here-->
+<!--row/card starts here-->
+<div class="row-container">  
+    <div class="card-container">
+        <div class="card">
+            <div class="countyName">Orange County</div>
+                <div class="image-container-wrapper">
+                    <a href="https://www.belleisleapts.com/" target="_blank">
+                    <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/061_4503_cove_drive_-_belle_isle-61_rev%20dak.jpg');">&nbsp;</div>
+                    </a>
+                <div class="phone-number"><img class="phone-icon" alt="phone icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/phone-solid.png">866-933-0396</div>
+            </div>
+            <div class="card-body">
+                <div class="card-title">
+                    <h2 class="property-name"><a href="https://www.belleisleapts.com/" target="_blank">Belle Isle Apartments</a></h2>
+                    <div class="address"><img class="map-pin-icon" alt="map-pin-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/location-dot-solid.png">
+                        <a href="https://maps.app.goo.gl/QDETi1KrDpmiJq1D6">4503 Cove Dr, Orlando, FL 32812</a></div>
+                </div>
+                <h3 class="special-pricing">Pricing Starting at:</h3>
+                        <div class="pricing-grid">
+                            <!--<div class="price-item">1 Bedroom at <p>$1,325</p></div>-->
+                            <!--<div class="price-item">2 Bedroom at <p>$1,899</p></div>-->
+                            <!--<div class="price-item">3 Bedroom at <p>$1,789</p></div>-->
+                            <div class="price-item">4 Bedroom at <p>$2,239</p></div>
+                        </div>
+                        <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
+                        <h2 class="eligibility-title accordion-container" data-value="" onclick="toggleAccordion('modal11')"></h2>
+                        <div class="accordion-content" id="modal11"><span class="close-btn-x" onclick="toggleAccordion('modal11')">x</span>
+                        <table class="table">
+                            <thead class="thead">
+                                <tr class="tr">
+                                    <th class="th" scope="col">Household Size</th>
+                                    <th class="th" scope="col">Max Allowable Household Income</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="tbody-container table">
+                        </table>
+                        </div>
+                        <button class="CTA-apply"><a href="https://www.belleisleapts.com/letsgetstarted" target="_blank">Get Started</a></button>
+                        <p class="date-updated"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--row/card ends here-->
+</section>
+
+<section class="county-section" id="Osceola">
+    <h1 class="county-title">Osceola County</h1>
+<!--row/card starts here-->
+<div class="row-container">  
+    <div class="card-container">
+        <div class="card">
+            <div class="countyName">Osceola County</div>
+                <div class="image-container-wrapper">
+                    <a href="https://www.fountainsatsanremo.com/" target="_blank">
+                    <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/fountains%20at%20san%20remo_030124.jpg');">&nbsp;</div>
+                    </a>
+                <div class="phone-number"><img class="phone-icon" alt="phone icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/phone-solid.png">877-734-2616</div>
+            </div>
+            <div class="card-body">
+                <div class="card-title">
+                    <h2 class="property-name"><a href="https://www.fountainsatsanremo.com/" target="_blank">Fountains at San Remo Court</a></h2>
+                    <div class="address"><img class="map-pin-icon" alt="map-pin-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/location-dot-solid.png">
+                        <a href="https://maps.app.goo.gl/6bUKudNcwTyfTLDS8">840 Perth Pl, Kissimmee, FL 34758</a></div>
+                </div>
+                <h3 class="special-pricing">Special Limited Time Pricing!</h3>
+                        <div class="pricing-grid">
+                            <!--<div class="price-item">1 Bedroom at <p>$price</p></div>-->
+                            <!--<div class="price-item">2 Bedroom at <p>$price</p></div>-->
+                            <div class="price-item">3 Bedroom at <p>$1,759</p></div>
+                            <!--<div class="price-item">4 Bedroom at <p>$price</p></div>-->
+                        </div>
+                        <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
+                        <h2 class="eligibility-title accordion-container" data-value="" onclick="toggleAccordion('modal12')"></h2>
+                        <div class="accordion-content" id="modal12"><span class="close-btn-x" onclick="toggleAccordion('modal12')">x</span>
+                        <table class="table">
+                            <thead class="thead">
+                                <tr class="tr">
+                                    <th class="th" scope="col">Household Size</th>
+                                    <th class="th" scope="col">Max Allowable Household Income</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="tbody-container table">
+                        </table>
+                        </div>
+                        <button class="CTA-apply"><a href="https://www.fountainsatsanremo.com/letsgetstarted" target="_blank">Get Started</a></button>
+                        <p class="date-updated"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--row/card ends here-->
+<!--row/card starts here-->
+<div class="row-container">  
+    <div class="card-container">
+        <div class="card">
+            <div class="countyName">Osceola County</div>
+                <div class="image-container-wrapper">
+                    <a href="https://www.myregattabay.com/" target="_blank">
+                    <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/regatta%20bay_2023_pool_aerial%20(2).jpg');">&nbsp;</div>
+                    </a>
+                <div class="phone-number"><img class="phone-icon" alt="phone icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/phone-solid.png">866-718-5580</div>
+            </div>
+            <div class="card-body">
+                <div class="card-title">
+                    <h2 class="property-name"><a href="https://www.myregattabay.com/" target="_blank">Regatta Bay Apartments</a></h2>
+                    <div class="address"><img class="map-pin-icon" alt="map-pin-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/location-dot-solid.png">
+                        <a href="https://maps.app.goo.gl/Fq37H7kK4uK7jx6Q6">801 Coastal Bay Ln, Kissimmee, FL 34741</a></div>
+                </div>
+                <h3 class="special-pricing">Pricing Starting at:</h3>
+                        <div class="pricing-grid">
+                            <div class="price-item">1 Bedroom at <p>$1,399</p></div>
+                            <!--<div class="price-item">2 Bedroom at <p>$price</p></div>-->
+                            <!--<div class="price-item">3 Bedroom at <p>$price</p></div>-->
+                            <!--<div class="price-item">4 Bedroom at <p>$price</p></div>-->
+                        </div>
+                        <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
+                        <h2 class="eligibility-title accordion-container" data-value="" onclick="toggleAccordion('modal13')"></h2>
+                        <div class="accordion-content" id="modal13"><span class="close-btn-x" onclick="toggleAccordion('modal13')">x</span>
+                        <table class="table">
+                            <thead class="thead">
+                                <tr class="tr">
+                                    <th class="th" scope="col">Household Size</th>
+                                    <th class="th" scope="col">Max Allowable Household Income</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="tbody-container table">
+                        </table>
+                        </div>
+                        <button class="CTA-apply"><a href="https://www.myregattabay.com/letsgetstarted" target="_blank">Get Started</a></button>
+                        <p class="date-updated"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--row/card ends here-->
+<!--row/card starts here-->
+<div class="row-container">  
+    <div class="card-container">
+        <div class="card">
+            <div class="countyName">Osceola County</div>
+                <div class="image-container-wrapper">
+                    <a href="https://www.myheritagepark.com/" target="_blank">
+                    <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/fl_p1614756_heritageparkcommunities_08_photogallery.jpg');">&nbsp;</div>
+                    </a>
+                <div class="phone-number"><img class="phone-icon" alt="phone icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/phone-solid.png">855-202-8918</div>
+            </div>
+            <div class="card-body">
+                <div class="card-title">
+                    <h2 class="property-name"><a href="https://www.myheritagepark.com/" target="_blank">Heritage Commons Apartments</a></h2>
+                    <div class="address"><img class="map-pin-icon" alt="map-pin-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/location-dot-solid.png">
+                        <a href="https://maps.app.goo.gl/ktkY7iD8hgH7X8C88">302 Parkland Cir, Kissimmee, FL 34744</a></div>
+                </div>
+                <h3 class="special-pricing">Pricing Starting at:</h3>
+                        <div class="pricing-grid">
+                            <div class="price-item">1 Bedroom at <p>$1,232</p></div>
+                            <!--<div class="price-item">2 Bedroom at <p>$price</p></div>-->
+                            <!--<div class="price-item">3 Bedroom at <p>$price</p></div>-->
+                            <!--<div class="price-item">4 Bedroom at <p>$price</p></div>-->
+                        </div>
+                        <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
+                        <h2 class="eligibility-title accordion-container" data-value="80" onclick="toggleAccordion('modal14')">Click HERE to View Income Restrictions</h2>
+                        <div class="accordion-content" id="modal14"><span class="close-btn-x" onclick="toggleAccordion('modal14')">x</span>
+                        <table class="table">
+                            <thead class="thead">
+                                <tr class="tr">
+                                    <th class="th" scope="col">Household Size</th>
+                                    <th class="th" scope="col">Max Allowable Household Income</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="tbody-container table">
+                        </table>
+                        </div>
+                        <button class="CTA-apply"><a href="https://www.myheritagepark.com/letsgetstarted" target="_blank">Get Started</a></button>
+                        <p class="date-updated"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--row/card ends here-->
+<!--row/card starts here-->
+<div class="row-container">  
+    <div class="card-container">
+        <div class="card">
+            <div class="countyName">Osceola County</div>
+                <div class="image-container-wrapper">
+                    <a href="https://www.mysummercoveapts.com/" target="_blank">
+                    <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/summer%20cove_2023_exterior%20(5).jpg');">&nbsp;</div>
+                    </a>
+                <div class="phone-number"><img class="phone-icon" alt="phone icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/phone-solid.png">866-295-6809</div>
+            </div>
+            <div class="card-body">
+                <div class="card-title">
+                    <h2 class="property-name"><a href="https://www.mysummercoveapts.com/" target="_blank">Summer Cove Apartments</a></h2>
+                    <div class="address"><img class="map-pin-icon" alt="map-pin-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/location-dot-solid.png">
+                        <a href="https://maps.app.goo.gl/MS4wBXx7LXc1LDX18">200 Pine Valley Rd, St Cloud, FL 34769
+                        </a></div>
+                </div>
+                <h3 class="special-pricing">Pricing Starting at:</h3>
+                        <div class="pricing-grid">
+                            <!--<div class="price-item">1 Bedroom at <p>$1,232</p></div>-->
+                            <div class="price-item">2 Bedroom at <p>$1,489</p></div>
+                            <div class="price-item">3 Bedroom at <p>$1,680</p></div>
+                            <div class="price-item">4 Bedroom at <p>$2,100</p></div>
+                        </div>
+                        <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
+                        <h2 class="eligibility-title accordion-container" data-value="80" onclick="toggleAccordion('modal15')">Click HERE to View Income Restrictions</h2>
+                        <div class="accordion-content" id="modal15"><span class="close-btn-x" onclick="toggleAccordion('modal15')">x</span>
+                        <table class="table">
+                            <thead class="thead">
+                                <tr class="tr">
+                                    <th class="th" scope="col">Household Size</th>
+                                    <th class="th" scope="col">Max Allowable Household Income</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="tbody-container table">
+                        </table>
+                        </div>
+                        <button class="CTA-apply"><a href="https://www.mysummercoveapts.com/letsgetstarted" target="_blank">Get Started</a></button>
+                        <p class="date-updated"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--row/card ends here-->
+</section>
+<section class="county-section" id="Seminole">
+    <h1 class="county-title">Seminole County</h1>
+    <!--row/card starts here-->
+<div class="row-container">  
+    <div class="card-container">
+        <div class="card">
+            <div class="countyName">Seminole County</div>
+                <div class="image-container-wrapper">
+                    <a href="https://www.watervueatlongwood.com/" target="_blank">
+                    <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/hr15rev_new.jpg');">&nbsp;</div>
+                    </a>
+                <div class="phone-number"><img class="phone-icon" alt="phone icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/phone-solid.png">833-289-2521</div>
+            </div>
+            <div class="card-body">
+                <div class="card-title">
+                    <h2 class="property-name"><a href="https://www.watervueatlongwood.com/" target="_blank">WaterVue at Longwood</a></h2>
+                    <div class="address"><img class="map-pin-icon" alt="map-pin-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/location-dot-solid.png">
+                        <a href="https://maps.app.goo.gl/xkfFbLA2W5Ri1SLw5">907 Tidewater Ln, Longwood, FL 32750
+                        </a></div>
+                </div>
+                <h3 class="special-pricing">Pricing Starting at:</h3>
+                        <div class="pricing-grid">
+                            <!--<div class="price-item">1 Bedroom at <p>$1,232</p></div>-->
+                            <div class="price-item">2 Bedroom at <p>$1,899</p></div>
+                            <div class="price-item">3 Bedroom at <p>$1,739</p></div>
+                            <!--<div class="price-item">4 Bedroom at <p>$2,100</p></div>-->
+                        </div>
+                        <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
+                        <h2 class="eligibility-title accordion-container" data-value="" onclick="toggleAccordion('modal16')"></h2>
+                        <div class="accordion-content" id="modal16"><span class="close-btn-x" onclick="toggleAccordion('modal16')">x</span>
+                        <table class="table">
+                            <thead class="thead">
+                                <tr class="tr">
+                                    <th class="th" scope="col">Household Size</th>
+                                    <th class="th" scope="col">Max Allowable Household Income</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="tbody-container table">
+                        </table>
+                        </div>
+                        <button class="CTA-apply"><a href="https://www.watervueatlongwood.com/letsgetstarted" target="_blank">Get Started</a></button>
+                        <p class="date-updated"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--row/card ends here-->
+<!--row/card starts here-->
+<div class="row-container">  
+    <div class="card-container">
+        <div class="card">
+            <div class="countyName">Seminole County</div>
+                <div class="image-container-wrapper">
+                    <a href="https://www.trailsatloma.com/" target="_blank">
+                    <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/trails%20at%20loma_030424.jpg');">&nbsp;</div>
+                    </a>
+                <div class="phone-number"><img class="phone-icon" alt="phone icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/phone-solid.png">877-286-3657</div>
+            </div>
+            <div class="card-body">
+                <div class="card-title">
+                    <h2 class="property-name"><a href="https://www.trailsatloma.com/" target="_blank">Trails at Loma Apartments</a></h2>
+                    <div class="address"><img class="map-pin-icon" alt="map-pin-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/location-dot-solid.png">
+                        <a href="https://maps.app.goo.gl/vi2Fpoc6oYMj3xNa9">5200 Loma Vista Cir, Oviedo, FL 32765
+                        </a></div>
+                </div>
+                <h3 class="special-pricing">Special Limited Time Pricing!</h3>
+                        <div class="pricing-grid">
+                            <!--<div class="price-item">1 Bedroom at <p>$1,232</p></div>-->
+                            <div class="price-item">2 Bedroom at <p>$1,599</p></div>
+                            <div class="price-item">3 Bedroom at <p>$1,779</p></div>
+                            <div class="price-item">4 Bedroom at <p>$2,299</p></div>
+                        </div>
+                        <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
+                        <h2 class="eligibility-title accordion-container" data-value="" onclick="toggleAccordion('modal17')"></h2>
+                        <div class="accordion-content" id="modal17"><span class="close-btn-x" onclick="toggleAccordion('modal17')">x</span>
+                        <table class="table">
+                            <thead class="thead">
+                                <tr class="tr">
+                                    <th class="th" scope="col">Household Size</th>
+                                    <th class="th" scope="col">Max Allowable Household Income</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="tbody-container table">
+                        </table>
+                        </div>
+                        <button class="CTA-apply"><a href="https://www.trailsatloma.com/letsgetstarted" target="_blank">Get Started</a></button>
+                        <p class="date-updated"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--row/card ends here-->
+<!--row/card starts here-->
+<div class="row-container">  
+    <div class="card-container">
+        <div class="card">
+            <div class="countyName">Seminole County</div>
+                <div class="image-container-wrapper">
+                    <a href="https://www.covingtonclub.com/" target="_blank">
+                    <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/cf_covington_club-21.jpg');">&nbsp;</div>
+                    </a>
+                <div class="phone-number"><img class="phone-icon" alt="phone icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/phone-solid.png">866-677-1978</div>
+            </div>
+            <div class="card-body">
+                <div class="card-title">
+                    <h2 class="property-name"><a href="https://www.covingtonclub.com/" target="_blank">Covington Club Townhomes</a></h2>
+                    <div class="address"><img class="map-pin-icon" alt="map-pin-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/location-dot-solid.png">
+                        <a href="https://maps.app.goo.gl/qsXiUpKeXGocbRNT9">134 Callan Wy, Oviedo, FL 32765
+                        </a></div>
+                </div>
+                <h3 class="special-pricing">Pricing Starting at:</h3>
+                        <div class="pricing-grid">
+                            <!--<div class="price-item">1 Bedroom at <p>$1,232</p></div>-->
+                            <!--<div class="price-item">2 Bedroom at <p>$1,599</p></div>-->
+                            <div class="price-item">3 Bedroom at <p>$1,899</p></div>
+                            <!--<div class="price-item">4 Bedroom at <p>$2,299</p></div>-->
+                        </div>
+                        <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
+                        <h2 class="eligibility-title accordion-container" data-value="" onclick="toggleAccordion('modal18')"></h2>
+                        <div class="accordion-content" id="modal18"><span class="close-btn-x" onclick="toggleAccordion('modal18')">x</span>
+                        <table class="table">
+                            <thead class="thead">
+                                <tr class="tr">
+                                    <th class="th" scope="col">Household Size</th>
+                                    <th class="th" scope="col">Max Allowable Household Income</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="tbody-container table">
+                        </table>
+                        </div>
+                        <button class="CTA-apply"><a href="https://www.covingtonclub.com/letsgetstarted" target="_blank">Get Started</a></button>
+                        <p class="date-updated"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--row/card ends here-->
+</section>
+<section class="county-section" id="Sumter">
+    <h1 class="county-title">Sumter County</h1>
+    <!--row/card starts here-->
+<div class="row-container">  
+    <div class="card-container">
+        <div class="card">
+            <div class="countyName">Sumter County</div>
+                <div class="image-container-wrapper">
+                    <a href="https://www.lakesumterapartments.com/" target="_blank">
+                    <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1110/s3/2/82930/lake%20sumter_030124.jpg');">&nbsp;</div>
+                    </a>
+                <div class="phone-number"><img class="phone-icon" alt="phone icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/phone-solid.png">833-257-6065</div>
+            </div>
+            <div class="card-body">
+                <div class="card-title">
+                    <h2 class="property-name"><a href="https://www.lakesumterapartments.com/" target="_blank">Lake Sumter Apartments</a></h2>
+                    <div class="address"><img class="map-pin-icon" alt="map-pin-icon" src="https://cdngeneralcf.rentcafe.com/dmslivecafe/2/82930/location-dot-solid.png">
+                        <a href="https://maps.app.goo.gl/TA5QgKdwB9bomqX19">10816 NE 87th Lp, Lady Lake, FL 32162
+                        </a></div>
+                </div>
+                <h3 class="special-pricing">Special Limited Time Pricing!</h3>
+                        <div class="pricing-grid">
+                            <!--<div class="price-item">1 Bedroom at <p>$1,232</p></div>-->
+                            <!--<div class="price-item">2 Bedroom at <p>$1,599</p></div>-->
+                            <div class="price-item">3 Bedroom at <p>$1,499</p></div>
+                            <!--<div class="price-item">4 Bedroom at <p>$2,299</p></div>-->
+                        </div>
+                        <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
+                        <h2 class="eligibility-title accordion-container" data-value="80" onclick="toggleAccordion('modal18')">Click HERE to View Income Restrictions</h2>
+                        <div class="accordion-content" id="modal18"><span class="close-btn-x" onclick="toggleAccordion('modal18')">x</span>
+                        <table class="table">
+                            <thead class="thead">
+                                <tr class="tr">
+                                    <th class="th" scope="col">Household Size</th>
+                                    <th class="th" scope="col">Max Allowable Household Income</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="tbody-container table">
+                        </table>
+                        </div>
+                        <button class="CTA-apply"><a href="https://www.lakesumterapartments.com/letsgetstarted" target="_blank">Get Started</a></button>
+                        <p class="date-updated"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--row/card ends here-->
+</section>
+</body>
+</html>
