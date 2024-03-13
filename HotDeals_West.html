@@ -1378,83 +1378,38 @@ label {
 //East, there are 60% and 80% for Volusia, 80% only for Brevard, none for Martin/St Lucie.
 //Martin/St Lucie tables have been omitted due to being market units.
  
-const volusiaTable = [ 
+const westTable = [ 
 
-//1st table contains values for 60% income restriction for Volusia:
+//table contains values for 60% income restriction for Hillsborough, Hernando, Pasco, Pinellas Counties:
     
-    [
 
-        { 'householdSize': '1', 'income': '$32,520' },
-        { 'householdSize': '2', 'income': '$37,200' },
-        { 'householdSize': '3', 'income': '$41,820' },
-        { 'householdSize': '4', 'income': '$46,440' },
-        { 'householdSize': '5', 'income': '$50,160' },
-        { 'householdSize': '6', 'income': '$53,880' },
-        { 'householdSize': '7', 'income': '$57,680' },
-        { 'householdSize': '8', 'income': '$61,320' },
-
-    ],
-    //2nd table contains values for 80% income restriction for for Volusia:
-    [
-        { 'householdSize': '1', 'income': '$43,360' },
-        { 'householdSize': '2', 'income': '$49,600' },
-        { 'householdSize': '3', 'income': '$55,760' },
-        { 'householdSize': '4', 'income': '$61,920' },
-        { 'householdSize': '5', 'income': '$66,880' },
-        { 'householdSize': '6', 'income': '$71,840' },
-        { 'householdSize': '7', 'income': '$76,800' },
-        { 'householdSize': '8', 'income': '$81,760' },
-    ]
-];
-
-const brevardTable = [
-
-    //table contains values for 80% income restriction for Brevard county:
-
-    [
-
-        { 'householdSize': '1', 'income': '$48,160' },
-        { 'householdSize': '2', 'income': '$55,040' },
-        { 'householdSize': '3', 'income': '$61,920' },
-        { 'householdSize': '4', 'income': '$68,800' },
-        { 'householdSize': '5', 'income': '$74,320' },
-        { 'householdSize': '6', 'income': '$79,840' },
-        { 'householdSize': '7', 'income': '$85,360' },
-        { 'householdSize': '8', 'income': '$90,880' },
-
-
-    ]
-];
-
-const flaglerTable = [
-
-//1st table contains values for 60% income restriction for Flagler:
-
-    [
-
-        { 'householdSize': '1', 'income': '$33,180' },
-        { 'householdSize': '2', 'income': '$37,920' },
-        { 'householdSize': '3', 'income': '$42,660' },
-        { 'householdSize': '4', 'income': '$47,400' },
-        { 'householdSize': '5', 'income': '$51,240' },
-        { 'householdSize': '6', 'income': '$55,020' },
-        { 'householdSize': '7', 'income': '$58,800' },
-        { 'householdSize': '8', 'income': '$62,580' },
-    ],
-    //2nd table contains values for 80% income restriction for for Flagler:
-
-    [
-        { 'householdSize': '1', 'income': '$44,240' },
-        { 'householdSize': '2', 'income': '$50,560' },
-        { 'householdSize': '3', 'income': '$56,880' },
-        { 'householdSize': '4', 'income': '$63,200' },
-        { 'householdSize': '5', 'income': '$68,320' },
-        { 'householdSize': '6', 'income': '$73,360' },
-        { 'householdSize': '7', 'income': '$78,400' },
-        { 'householdSize': '8', 'income': '$83,440' },  
-    ],
+    { 'householdSize': '1', 'income': '$36,540' },
+    { 'householdSize': '2', 'income': '$41,760' },
+    { 'householdSize': '3', 'income': '$46,980' },
+    { 'householdSize': '4', 'income': '$52,140' },
+    { 'householdSize': '5', 'income': '$56,340' },
+    { 'householdSize': '6', 'income': '$60,540' },
+    { 'householdSize': '7', 'income': '$64,680' },
+    { 'householdSize': '8', 'income': '$68,880' },
 
 ];
+
+const sarasotaTable = [
+
+    //table contains values for 60% income restriction for Sarasota county:
+    
+    { 'householdSize': '1', 'income': '$38,400' },
+    { 'householdSize': '2', 'income': '$43,920' },
+    { 'householdSize': '3', 'income': '$49,380' },
+    { 'householdSize': '4', 'income': '$54,840' },
+    { 'householdSize': '5', 'income': '$59,280' },
+    { 'householdSize': '6', 'income': '$63,660' },
+    { 'householdSize': '7', 'income': '$68,040' },
+    { 'householdSize': '8', 'income': '$72,420' },
+
+];
+
+
 
    
 //Table element generator:
@@ -1496,56 +1451,32 @@ return tbody;
 const counties = document.querySelectorAll('.countyName');
 const incomeLimit = document.querySelectorAll('.eligibility-title');
 
-let incomeTableVolusia;
-let incomeTableBrevard;
-let incomeTableFlagler;
 
- counties.forEach((county, index) => {
-
-    const item = incomeLimit[index]; // Get the corresponding item from incomeLimit based on the current county index
-    
-    switch (true) {
-        case item.dataset.value === "60":
-            
-            incomeTableVolusia = volusiaTable[0];
-            incomeTableBrevard = brevardTable[0]; 
-            incomeTableFlagler = flaglerTable[0]; 
-            break;
-        default:
-            
-            incomeTableVolusia = volusiaTable[1];
-            incomeTableBrevard = brevardTable[0]; 
-            incomeTableFlagler = flaglerTable[1];
-            break;
-    } 
-
+ counties.forEach((county) => {
     const tableContainer = county.parentElement.querySelector('.tbody-container'); //check that table-container exists
 
-    if(tableContainer) {
-                switch (county.innerHTML) {
+    if (tableContainer) {
+        switch (county.innerHTML) {
+            case 'Hernando County':
+            case 'Hillsborough County':  
+            case 'Pasco County':
+            case 'Pinellas County':     
+                const generatedTableWest = generateTable(westTable);
+                tableContainer.appendChild(generatedTableWest);
+                break;    
 
-                    case 'Volusia County':
-                        const generatedTableVolusia = generateTable(incomeTableVolusia);
-                        tableContainer.appendChild(generatedTableVolusia);
-                        break;
-                    case 'Brevard County':
-                        const generatedTableBrevard = generateTable(incomeTableBrevard);
-                        tableContainer.appendChild(generatedTableBrevard);
-                        break;
-                    case 'Flagler County':
-                        const generatedTableFlagler = generateTable(incomeTableFlagler);
-                        tableContainer.appendChild(generatedTableFlagler);
-                        break;
+            case 'Sarasota County':     
+                const generatedTableSarasota = generateTable(sarasotaTable);
+                tableContainer.appendChild(generatedTableSarasota);
+                break;
 
-                    default:
-                        console.log('no table match found');
-                        break;
-                }
-            } else {
-                 console.log('no .tbody-container found for', county.innerHTML);
-            }
-
-
+            default:
+                console.log('no table match found');
+                break;
+        }
+    } else {
+        console.log('no .tbody-container found for', item.innerHTML);
+    }
 
 }); 
 
@@ -1574,7 +1505,7 @@ let incomeTableFlagler;
     
     <div id="intro-container">
         <div id="intro-title">
-            <h1 id="intro-h1">Hot Deals - East Florida</h1>
+            <h1 id="intro-h1">Hot Deals - West Florida</h1>
             <div id="intro-pic"></div>
             <div>
             <p id="intro-sub"><strong>ConcordRENTS</strong> is a national leader in providing high-quality, multifamily housing and understands the importance of a strong community and the value of giving back.<br />
@@ -1602,11 +1533,11 @@ let incomeTableFlagler;
 
 <div class="county-dropdown-container"><label for="county-dropdown">Select Your County:</label> <select id="county-select" onchange="handleCountySelect()">
     <option value="#">Please select</option>
-    <option value="#Volusia">Volusia</option>
-    <option value="#Brevard">Brevard</option>
-    <option value="#Flagler">Flagler</option>
-    <option value="#St. Lucie">St. Lucie</option>
-    <option value="#Martin">Martin</option> 
+    <option value="#Hillsborough">Hillsborough</option>
+    <option value="#Pinellas">Pinellas</option>
+    <option value="#Pasco">Pasco</option>
+    <option value="#Hernando">Hernando</option>
+    <option value="#Sarasota">Sarasota</option> 
 </select>
 </div>
 
@@ -1616,7 +1547,7 @@ let incomeTableFlagler;
 <div class="row-container">  
     <div class="card-container">
         <div class="card">
-            <div class="countyName">Volusia County</div>
+            <div class="countyName">Hillsborough County</div>
             <div class="image-container-wrapper">
                 <a href="https://www.wildwoodpreserveapts.com/" target="_blank">
                 <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_365/s3/2/82930/wildwood%20preserve_030424.jpg');">&nbsp;</div>
@@ -1636,8 +1567,7 @@ let incomeTableFlagler;
                             <div class="price-item">3 Bedroom at <p>$1,649</p></div>
                             <!--<div class="price-item">4 Bedroom at <p>$price</p></div>-->
                         </div>
-                        <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
-                        <h2 class="eligibility-title accordion-container" data-value="60" onclick="toggleAccordion('modal1')">Click HERE to View Income Restrictions</h2>
+                        <h2 class="eligibility-title accordion-container" onclick="toggleAccordion('modal1')">Click HERE to View Income Restrictions</h2>
                         <div class="accordion-content" id="modal1"><span class="close-btn-x" onclick="toggleAccordion('modal1')">x</span>
                         <table class="table">
                             <thead class="thead">
@@ -1660,13 +1590,13 @@ let incomeTableFlagler;
 <!--row/card ends here-->
 </section>
 
-<section class="county-section" id="Brevard">
-    <h1 class="county-title">Brevard</h1>
+<section class="county-section" id="Hillsborough">
+    <h1 class="county-title">Hillsborough County</h1>
     <!--row/card starts here-->
 <div class="row-container">  
     <div class="card-container">
         <div class="card">
-            <div class="countyName">Brevard County</div>
+            <div class="countyName">Hillsborough County</div>
                 <div class="image-container-wrapper">
                     <a href="https://www.myameliacourt.com/" target="_blank">
                     <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/x_0,y_0,w_1250,h_1250,c_crop/q_auto,f_auto,c_limit,w_365/s3/2/82930/amelia%20court_030724.jpg');">&nbsp;</div>
@@ -1686,8 +1616,7 @@ let incomeTableFlagler;
                             <div class="price-item">3 Bedroom at <p>$2,249</p></div>
                             <!--<div class="price-item">4 Bedroom at <p>$price</p></div>-->
                         </div>
-                        <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
-                        <h2 class="eligibility-title accordion-container" data-value="80" onclick="toggleAccordion('modal2')">Click HERE to View Income Restrictions</h2>
+                        <h2 class="eligibility-title accordion-container" onclick="toggleAccordion('modal2')">Click HERE to View Income Restrictions</h2>
                         <div class="accordion-content" id="modal2"><span class="close-btn-x" onclick="toggleAccordion('modal2')">x</span>
                         <table class="table">
                             <thead class="thead">
@@ -1709,13 +1638,13 @@ let incomeTableFlagler;
 </div>
 <!--row/card ends here-->
 </section>
-<section class="county-section" id="Volusia">
-    <h1 class="county-title">Volusia</h1>
+<section class="county-section" id="Pinellas">
+    <h1 class="county-title">Pinellas County</h1>
 <!--row/card starts here-->
 <div class="row-container">  
     <div class="card-container">
         <div class="card">
-            <div class="countyName">Volusia County</div>
+            <div class="countyName">Pinellas County</div>
                 <div class="image-container-wrapper">
                     <a href="https://www.lakesideretreatat27.com/" target="_blank">
                     <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/exterior2019-6_rev.jpg');">&nbsp;</div>
@@ -1735,8 +1664,7 @@ let incomeTableFlagler;
                             <div class="price-item">3 Bedroom at <p>$1,349</p></div>
                             <div class="price-item">4 Bedroom at <p>$1,599</p></div>
                         </div>
-                        <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
-                        <h2 class="eligibility-title accordion-container" data-value="80" onclick="toggleAccordion('modal3')">Click HERE to View Income Restrictions</h2>
+                        <h2 class="eligibility-title accordion-container" onclick="toggleAccordion('modal3')">Click HERE to View Income Restrictions</h2>
                         <div class="accordion-content" id="modal3"><span class="close-btn-x" onclick="toggleAccordion('modal3')">x</span>
                         <table class="table">
                             <thead class="thead">
@@ -1759,13 +1687,13 @@ let incomeTableFlagler;
 <!--row/card ends here-->
 </section>
 
-<section class="county-section" id="Flagler">
-    <h1 class="county-title">Flagler County</h1>
+<section class="county-section" id="Pasco">
+    <h1 class="county-title">Pasco County</h1>
 <!--row/card starts here-->
 <div class="row-container">  
     <div class="card-container">
         <div class="card">
-            <div class="countyName">Flagler County</div>
+            <div class="countyName">Pasco County</div>
                 <div class="image-container-wrapper">
                     <a href="https://www.fountainsatsanremo.com/" target="_blank">
                     <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/fountains%20at%20san%20remo_030124.jpg');">&nbsp;</div>
@@ -1785,8 +1713,7 @@ let incomeTableFlagler;
                             <div class="price-item">3 Bedroom at <p>$1,759</p></div>
                             <!--<div class="price-item">4 Bedroom at <p>$price</p></div>-->
                         </div>
-                        <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
-                        <h2 class="eligibility-title accordion-container" data-value="80" onclick="toggleAccordion('modal4')">Click HERE to View Income Restrictions</h2>
+                        <h2 class="eligibility-title accordion-container" onclick="toggleAccordion('modal4')">Click HERE to View Income Restrictions</h2>
                         <div class="accordion-content" id="modal4"><span class="close-btn-x" onclick="toggleAccordion('modal4')">x</span>
                         <table class="table">
                             <thead class="thead">
@@ -1808,13 +1735,13 @@ let incomeTableFlagler;
 </div>
 <!--row/card ends here-->
 </section>
-<section class="county-section" id="St. Lucie">
-    <h1 class="county-title">St. Lucie County</h1>
+<section class="county-section" id="Hernando">
+    <h1 class="county-title">Hernando County</h1>
     <!--row/card starts here-->
 <div class="row-container">  
     <div class="card-container">
         <div class="card">
-            <div class="countyName">St. Lucie County</div>
+            <div class="countyName">Hernando County</div>
                 <div class="image-container-wrapper">
                     <a href="https://www.watervueatlongwood.com/" target="_blank">
                     <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1920/s3/2/82930/hr15rev_new.jpg');">&nbsp;</div>
@@ -1835,8 +1762,7 @@ let incomeTableFlagler;
                             <div class="price-item">3 Bedroom at <p>$1,739</p></div>
                             <!--<div class="price-item">4 Bedroom at <p>$2,100</p></div>-->
                         </div>
-                        <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
-                        <h2 class="eligibility-title accordion-container" data-value="" onclick="toggleAccordion('modal5')"></h2>
+                        <h2 class="eligibility-title accordion-container" onclick="toggleAccordion('modal5')">Click HERE to View Income Restrictions</h2>
                         <div class="accordion-content" id="modal5"><span class="close-btn-x" onclick="toggleAccordion('modal5')">x</span>
                         <table class="table">
                             <thead class="thead">
@@ -1858,13 +1784,13 @@ let incomeTableFlagler;
 </div>
 <!--row/card ends here-->
 </section>
-<section class="county-section" id="Martin">
-    <h1 class="county-title">Martin County</h1>
+<section class="county-section" id="Sarasota">
+    <h1 class="county-title">Sarasota County</h1>
     <!--row/card starts here-->
 <div class="row-container">  
     <div class="card-container">
         <div class="card">
-            <div class="countyName">Martin County</div>
+            <div class="countyName">Sarasota County</div>
                 <div class="image-container-wrapper">
                     <a href="https://www.lakesumterapartments.com/" target="_blank">
                     <div class="image-container" style="background-image: url('https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_limit,w_1110/s3/2/82930/lake%20sumter_030124.jpg');">&nbsp;</div>
@@ -1885,8 +1811,7 @@ let incomeTableFlagler;
                             <div class="price-item">3 Bedroom at <p>$1,499</p></div>
                             <!--<div class="price-item">4 Bedroom at <p>$2,299</p></div>-->
                         </div>
-                        <!--insert the income restiction percentage on data-value property below as either "60" or "80"-->
-                        <h2 class="eligibility-title accordion-container" data-value="" onclick="toggleAccordion('modal6')"></h2>
+                        <h2 class="eligibility-title accordion-container" onclick="toggleAccordion('modal6')">Click HERE to View Income Restrictions</h2>
                         <div class="accordion-content" id="modal6"><span class="close-btn-x" onclick="toggleAccordion('modal6')">x</span>
                         <table class="table">
                             <thead class="thead">
